@@ -1,0 +1,44 @@
+{
+    "name": "replugged-plugins",
+    "description": "All of my replugged plugins",
+    "authors": "12944qwerty",
+    "version": "1.0.0",
+    "engines": {
+        "node": ">=18.0.0",
+        "pnpm": ">=8.0.0"
+    },
+    "scripts": {
+        "build": "tsx scripts/build.ts",
+        "watch": "pnpm build --watch",
+        "bundle": "tsx scripts/bundle.ts",
+        "build-and-bundle": "pnpm run build --no-install && pnpm run bundle",
+        "check": "tsc --noEmit",
+        "prettier:check": "prettier ./src --check",
+        "eslint:check": "eslint ./src",
+        "prettier:fix": "prettier ./src --write",
+        "eslint:fix": "eslint ./src --fix",
+        "lint": "pnpm run prettier:check && pnpm run eslint:check && pnpm run check",
+        "lint:fix": "pnpm run prettier:fix && pnpm run eslint:fix"
+    },
+    "keywords": [],
+    "author": "12944qwerty",
+    "license": "MIT",
+    "dependencies": {
+        "@electron/asar": "^3.2.4",
+        "@types/lodash": "^4.14.198",
+        "@types/node": "^18.17.14",
+        "@types/react": "^18.2.21",
+        "@typescript-eslint/eslint-plugin": "^5.62.0",
+        "@typescript-eslint/parser": "^5.62.0",
+        "esbuild": "^0.15.18",
+        "esbuild-sass-plugin": "^2.15.0",
+        "eslint": "^8.48.0",
+        "eslint-config-dmitmel": "github:dmitmel/eslint-config-dmitmel",
+        "eslint-plugin-node": "^11.1.0",
+        "eslint-plugin-react": "^7.33.2",
+        "prettier": "^2.8.8",
+        "replugged": "4.5.1",
+        "tsx": "^3.12.8",
+        "typescript": "^4.9.5"
+    }
+}
