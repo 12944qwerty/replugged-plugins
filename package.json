@@ -11,7 +11,6 @@
         "build": "replugged build plugin",
         "watch": "replugged build plugin --watch",
         "bundle": "replugged bundle plugin",
-        "build-and-bundle": "pnpm run build --no-install && pnpm run bundle",
         "release": "replugged release",
         "check": "tsc --noEmit",
         "prettier:check": "prettier ./plugins --check",
