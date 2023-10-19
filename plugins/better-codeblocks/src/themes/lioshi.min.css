@@ -1,1 +1,64 @@
- .better-codeblocks .hljs{display:block;overflow-x:auto;padding:1em}.better-codeblocks .hljs{padding:3px 5px}.better-codeblocks .hljs{background:#303030;color:#c5c8c6}.better-codeblocks .hljs-comment{color:#8d8d8d}.better-codeblocks .hljs-quote{color:#b3c7d8}.better-codeblocks .hljs-deletion,.better-codeblocks .hljs-name,.better-codeblocks .hljs-regexp,.better-codeblocks .hljs-selector-class,.better-codeblocks .hljs-selector-id,.better-codeblocks .hljs-tag,.better-codeblocks .hljs-template-variable,.better-codeblocks .hljs-variable{color:#c66}.better-codeblocks .hljs-built_in,.better-codeblocks .hljs-literal,.better-codeblocks .hljs-number,.better-codeblocks .hljs-subst .better-codeblocks .hljs-link,.better-codeblocks .hljs-type{color:#de935f}.better-codeblocks .hljs-attribute{color:#f0c674}.better-codeblocks .hljs-addition,.better-codeblocks .hljs-bullet,.better-codeblocks .hljs-params,.better-codeblocks .hljs-string{color:#b5bd68}.better-codeblocks .hljs-class,.better-codeblocks .hljs-function,.better-codeblocks .hljs-keyword,.better-codeblocks .hljs-selector-tag{color:#be94bb}.better-codeblocks .hljs-meta,.better-codeblocks .hljs-section,.better-codeblocks .hljs-title{color:#81a2be}.better-codeblocks .hljs-symbol{color:#dbc4d9}.better-codeblocks .hljs-emphasis{font-style:italic}.better-codeblocks .hljs-strong{font-weight:700}
+.better-codeblocks .hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+}
+.better-codeblocks .hljs {
+  padding: 3px 5px;
+}
+.better-codeblocks .hljs {
+  background: #303030;
+  color: #c5c8c6;
+}
+.better-codeblocks .hljs-comment {
+  color: #8d8d8d;
+}
+.better-codeblocks .hljs-quote {
+  color: #b3c7d8;
+}
+.better-codeblocks .hljs-deletion,
+.better-codeblocks .hljs-name,
+.better-codeblocks .hljs-regexp,
+.better-codeblocks .hljs-selector-class,
+.better-codeblocks .hljs-selector-id,
+.better-codeblocks .hljs-tag,
+.better-codeblocks .hljs-template-variable,
+.better-codeblocks .hljs-variable {
+  color: #c66;
+}
+.better-codeblocks .hljs-built_in,
+.better-codeblocks .hljs-literal,
+.better-codeblocks .hljs-number,
+.better-codeblocks .hljs-subst .better-codeblocks .hljs-link,
+.better-codeblocks .hljs-type {
+  color: #de935f;
+}
+.better-codeblocks .hljs-attribute {
+  color: #f0c674;
+}
+.better-codeblocks .hljs-addition,
+.better-codeblocks .hljs-bullet,
+.better-codeblocks .hljs-params,
+.better-codeblocks .hljs-string {
+  color: #b5bd68;
+}
+.better-codeblocks .hljs-class,
+.better-codeblocks .hljs-function,
+.better-codeblocks .hljs-keyword,
+.better-codeblocks .hljs-selector-tag {
+  color: #be94bb;
+}
+.better-codeblocks .hljs-meta,
+.better-codeblocks .hljs-section,
+.better-codeblocks .hljs-title {
+  color: #81a2be;
+}
+.better-codeblocks .hljs-symbol {
+  color: #dbc4d9;
+}
+.better-codeblocks .hljs-emphasis {
+  font-style: italic;
+}
+.better-codeblocks .hljs-strong {
+  font-weight: 700;
+}

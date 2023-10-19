@@ -1,4 +1,11 @@
- .better-codeblocks .hljs{display:block;overflow-x:auto;padding:1em}.better-codeblocks .hljs{padding:3px 5px}/*!
+.better-codeblocks .hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+}
+.better-codeblocks .hljs {
+  padding: 3px 5px;
+} /*!
   Theme: nnfx dark
   Description: a theme inspired by Netscape Navigator/Firefox
   Author: (c) 2020-2021 Jim Mason <jmason@ibinx.com>
@@ -7,4 +14,90 @@
   Updated: 2021-05-17
 
   @version 1.1.0
-*/.better-codeblocks .hljs{background:#333;color:#fff}.language-xml .better-codeblocks .hljs-meta,.language-xml .better-codeblocks .hljs-meta-string{font-weight:700;font-style:italic;color:#69f}.better-codeblocks .hljs-comment,.better-codeblocks .hljs-quote{font-style:italic;color:#9c6}.better-codeblocks .hljs-built_in,.better-codeblocks .hljs-keyword,.better-codeblocks .hljs-name{color:#a7a}.better-codeblocks .hljs-attr,.better-codeblocks .hljs-name{font-weight:700}.better-codeblocks .hljs-string{font-weight:400}.better-codeblocks .hljs-,.better-codeblocks .hljs-link,.better-codeblocks .hljs-meta .better-codeblocks .hljs-string,.better-codeblocks .hljs-number,.better-codeblocks .hljs-regexp,.better-codeblocks .hljs-string{color:#bce}.better-codeblocks .hljs-bullet,.better-codeblocks .hljs-symbol,.better-codeblocks .hljs-template-variable,.better-codeblocks .hljs-title,.better-codeblocks .hljs-variable{color:#d40}.better-codeblocks .hljs-class .better-codeblocks .hljs-title,.better-codeblocks .hljs-title.class_,.better-codeblocks .hljs-type{font-weight:700;color:#96c}.better-codeblocks .hljs-attr,.better-codeblocks .hljs-function .better-codeblocks .hljs-title,.better-codeblocks .hljs-subst,.better-codeblocks .hljs-tag,.better-codeblocks .hljs-title.function_{color:#fff}.better-codeblocks .hljs-formula{background-color:#eee;font-style:italic}.better-codeblocks .hljs-addition{background-color:#797}.better-codeblocks .hljs-deletion{background-color:#c99}.better-codeblocks .hljs-meta{color:#69f}.better-codeblocks .hljs-section,.better-codeblocks .hljs-selector-class,.better-codeblocks .hljs-selector-id,.better-codeblocks .hljs-selector-pseudo,.better-codeblocks .hljs-selector-tag{font-weight:700;color:#69f}.better-codeblocks .hljs-selector-pseudo{font-style:italic}.better-codeblocks .hljs-doctag,.better-codeblocks .hljs-strong{font-weight:700}.better-codeblocks .hljs-emphasis{font-style:italic}
+*/
+.better-codeblocks .hljs {
+  background: #333;
+  color: #fff;
+}
+.language-xml .better-codeblocks .hljs-meta,
+.language-xml .better-codeblocks .hljs-meta-string {
+  font-weight: 700;
+  font-style: italic;
+  color: #69f;
+}
+.better-codeblocks .hljs-comment,
+.better-codeblocks .hljs-quote {
+  font-style: italic;
+  color: #9c6;
+}
+.better-codeblocks .hljs-built_in,
+.better-codeblocks .hljs-keyword,
+.better-codeblocks .hljs-name {
+  color: #a7a;
+}
+.better-codeblocks .hljs-attr,
+.better-codeblocks .hljs-name {
+  font-weight: 700;
+}
+.better-codeblocks .hljs-string {
+  font-weight: 400;
+}
+.better-codeblocks .hljs-,
+.better-codeblocks .hljs-link,
+.better-codeblocks .hljs-meta .better-codeblocks .hljs-string,
+.better-codeblocks .hljs-number,
+.better-codeblocks .hljs-regexp,
+.better-codeblocks .hljs-string {
+  color: #bce;
+}
+.better-codeblocks .hljs-bullet,
+.better-codeblocks .hljs-symbol,
+.better-codeblocks .hljs-template-variable,
+.better-codeblocks .hljs-title,
+.better-codeblocks .hljs-variable {
+  color: #d40;
+}
+.better-codeblocks .hljs-class .better-codeblocks .hljs-title,
+.better-codeblocks .hljs-title.class_,
+.better-codeblocks .hljs-type {
+  font-weight: 700;
+  color: #96c;
+}
+.better-codeblocks .hljs-attr,
+.better-codeblocks .hljs-function .better-codeblocks .hljs-title,
+.better-codeblocks .hljs-subst,
+.better-codeblocks .hljs-tag,
+.better-codeblocks .hljs-title.function_ {
+  color: #fff;
+}
+.better-codeblocks .hljs-formula {
+  background-color: #eee;
+  font-style: italic;
+}
+.better-codeblocks .hljs-addition {
+  background-color: #797;
+}
+.better-codeblocks .hljs-deletion {
+  background-color: #c99;
+}
+.better-codeblocks .hljs-meta {
+  color: #69f;
+}
+.better-codeblocks .hljs-section,
+.better-codeblocks .hljs-selector-class,
+.better-codeblocks .hljs-selector-id,
+.better-codeblocks .hljs-selector-pseudo,
+.better-codeblocks .hljs-selector-tag {
+  font-weight: 700;
+  color: #69f;
+}
+.better-codeblocks .hljs-selector-pseudo {
+  font-style: italic;
+}
+.better-codeblocks .hljs-doctag,
+.better-codeblocks .hljs-strong {
+  font-weight: 700;
+}
+.better-codeblocks .hljs-emphasis {
+  font-style: italic;
+}

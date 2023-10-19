@@ -14,7 +14,7 @@ const classes = await webpack.waitForProps<Record<string, string>>("select", "lo
 function updateTheme(theme: string) {
   cfg.set("theme", theme);
 
-  const themeStylesheet = document.getElementById("hljs-theme") as HTMLLinkElement;
+  const themeStylesheet = document.getElementById("hljs-theme") as HTMLLinkElement | undefined;
   if (themeStylesheet)
     themeStylesheet.href = `https://cdn.jsdelivr.net/gh/qwerty-mods/better-codeblocks@master/src/themes/${cfg.get(
       "theme",

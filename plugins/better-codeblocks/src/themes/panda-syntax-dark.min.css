@@ -1,1 +1,87 @@
- .better-codeblocks .hljs{display:block;overflow-x:auto;padding:1em}.better-codeblocks .hljs{padding:3px 5px}.better-codeblocks .hljs{color:#e6e6e6;background:#2a2c2d}.better-codeblocks .hljs-emphasis{font-style:italic}.better-codeblocks .hljs-strong{font-weight:700}.better-codeblocks .hljs-link{text-decoration:underline}.better-codeblocks .hljs-comment,.better-codeblocks .hljs-quote{color:#bbb;font-style:italic}.better-codeblocks .hljs-params{color:#bbb}.better-codeblocks .hljs-attr,.better-codeblocks .hljs-punctuation{color:#e6e6e6}.better-codeblocks .hljs-meta,.better-codeblocks .hljs-name,.better-codeblocks .hljs-selector-tag{color:#ff4b82}.better-codeblocks .hljs-char.escape_,.better-codeblocks .hljs-operator{color:#b084eb}.better-codeblocks .hljs-deletion,.better-codeblocks .hljs-keyword{color:#ff75b5}.better-codeblocks .hljs-regexp,.better-codeblocks .hljs-selector-attr,.better-codeblocks .hljs-selector-pseudo,.better-codeblocks .hljs-variable.language_{color:#ff9ac1}.better-codeblocks .hljs-,.better-codeblocks .hljs-formula,.better-codeblocks .hljs-property,.better-codeblocks .hljs-section,.better-codeblocks .hljs-subst,.better-codeblocks .hljs-title.function_{color:#45a9f9}.better-codeblocks .hljs-addition,.better-codeblocks .hljs-bullet,.better-codeblocks .hljs-meta .better-codeblocks .hljs-string,.better-codeblocks .hljs-selector-class,.better-codeblocks .hljs-string,.better-codeblocks .hljs-symbol,.better-codeblocks .hljs-title.class_,.better-codeblocks .hljs-title.class_.inherited__{color:#19f9d8}.better-codeblocks .hljs-attribute,.better-codeblocks .hljs-built_in,.better-codeblocks .hljs-doctag,.better-codeblocks .hljs-link,.better-codeblocks .hljs-literal,.better-codeblocks .hljs-meta .better-codeblocks .hljs-keyword,.better-codeblocks .hljs-number,.better-codeblocks .hljs-punctuation,.better-codeblocks .hljs-selector-id,.better-codeblocks .hljs-tag,.better-codeblocks .hljs-template-tag,.better-codeblocks .hljs-template-variable,.better-codeblocks .hljs-title,.better-codeblocks .hljs-type,.better-codeblocks .hljs-variable{color:#ffb86c}
+.better-codeblocks .hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+}
+.better-codeblocks .hljs {
+  padding: 3px 5px;
+}
+.better-codeblocks .hljs {
+  color: #e6e6e6;
+  background: #2a2c2d;
+}
+.better-codeblocks .hljs-emphasis {
+  font-style: italic;
+}
+.better-codeblocks .hljs-strong {
+  font-weight: 700;
+}
+.better-codeblocks .hljs-link {
+  text-decoration: underline;
+}
+.better-codeblocks .hljs-comment,
+.better-codeblocks .hljs-quote {
+  color: #bbb;
+  font-style: italic;
+}
+.better-codeblocks .hljs-params {
+  color: #bbb;
+}
+.better-codeblocks .hljs-attr,
+.better-codeblocks .hljs-punctuation {
+  color: #e6e6e6;
+}
+.better-codeblocks .hljs-meta,
+.better-codeblocks .hljs-name,
+.better-codeblocks .hljs-selector-tag {
+  color: #ff4b82;
+}
+.better-codeblocks .hljs-char.escape_,
+.better-codeblocks .hljs-operator {
+  color: #b084eb;
+}
+.better-codeblocks .hljs-deletion,
+.better-codeblocks .hljs-keyword {
+  color: #ff75b5;
+}
+.better-codeblocks .hljs-regexp,
+.better-codeblocks .hljs-selector-attr,
+.better-codeblocks .hljs-selector-pseudo,
+.better-codeblocks .hljs-variable.language_ {
+  color: #ff9ac1;
+}
+.better-codeblocks .hljs-,
+.better-codeblocks .hljs-formula,
+.better-codeblocks .hljs-property,
+.better-codeblocks .hljs-section,
+.better-codeblocks .hljs-subst,
+.better-codeblocks .hljs-title.function_ {
+  color: #45a9f9;
+}
+.better-codeblocks .hljs-addition,
+.better-codeblocks .hljs-bullet,
+.better-codeblocks .hljs-meta .better-codeblocks .hljs-string,
+.better-codeblocks .hljs-selector-class,
+.better-codeblocks .hljs-string,
+.better-codeblocks .hljs-symbol,
+.better-codeblocks .hljs-title.class_,
+.better-codeblocks .hljs-title.class_.inherited__ {
+  color: #19f9d8;
+}
+.better-codeblocks .hljs-attribute,
+.better-codeblocks .hljs-built_in,
+.better-codeblocks .hljs-doctag,
+.better-codeblocks .hljs-link,
+.better-codeblocks .hljs-literal,
+.better-codeblocks .hljs-meta .better-codeblocks .hljs-keyword,
+.better-codeblocks .hljs-number,
+.better-codeblocks .hljs-punctuation,
+.better-codeblocks .hljs-selector-id,
+.better-codeblocks .hljs-tag,
+.better-codeblocks .hljs-template-tag,
+.better-codeblocks .hljs-template-variable,
+.better-codeblocks .hljs-title,
+.better-codeblocks .hljs-type,
+.better-codeblocks .hljs-variable {
+  color: #ffb86c;
+}

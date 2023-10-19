@@ -17,17 +17,17 @@ export interface Highlighter {
 }
 const { highlight } = hljs as Highlighter;
 
-const mod = (await webpack.waitForModule(
+const mod = await webpack.waitForModule(
   webpack.filters.bySource(
     'document.queryCommandEnabled("copy")||document.queryCommandSupported("copy")',
   ),
-)) as Record<string, unknown>;
+);
 const Clipboard: {
   SUPPORTED: boolean;
   copy: (content: string) => unknown;
 } = {
   copy: Object.values(mod).find((e) => typeof e === "function") as (args: string) => void,
-  SUPPORTED: Object.values(mod).find((e) => typeof e === "boolean") as unknown as boolean,
+  SUPPORTED: Object.values(mod).find((e) => typeof e === "boolean") as boolean,
 };
 
 function resolveLang(id: string) {

@@ -1,7 +1,84 @@
- .better-codeblocks .hljs{display:block;overflow-x:auto;padding:1em}.better-codeblocks .hljs{padding:3px 5px}/*!
+.better-codeblocks .hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+}
+.better-codeblocks .hljs {
+  padding: 3px 5px;
+} /*!
   Theme: a11y-light
   Author: @ericwbailey
   Maintainer: @ericwbailey
 
   Based on the Tomorrow Night Eighties theme: https://github.com/isagalaev/highlight.js/blob/master/src/styles/tomorrow-night-eighties.css
-*/.better-codeblocks .hljs{background:#fefefe;color:#545454}.better-codeblocks .hljs-comment,.better-codeblocks .hljs-quote{color:#696969}.better-codeblocks .hljs-deletion,.better-codeblocks .hljs-name,.better-codeblocks .hljs-regexp,.better-codeblocks .hljs-selector-class,.better-codeblocks .hljs-selector-id,.better-codeblocks .hljs-tag,.better-codeblocks .hljs-template-variable,.better-codeblocks .hljs-variable{color:#d91e18}.better-codeblocks .hljs-attribute,.better-codeblocks .hljs-built_in,.better-codeblocks .hljs-link,.better-codeblocks .hljs-literal,.better-codeblocks .hljs-meta,.better-codeblocks .hljs-number,.better-codeblocks .hljs-params,.better-codeblocks .hljs-type{color:#aa5d00}.better-codeblocks .hljs-addition,.better-codeblocks .hljs-bullet,.better-codeblocks .hljs-string,.better-codeblocks .hljs-symbol{color:green}.better-codeblocks .hljs-section,.better-codeblocks .hljs-title{color:#007faa}.better-codeblocks .hljs-keyword,.better-codeblocks .hljs-selector-tag{color:#7928a1}.better-codeblocks .hljs-emphasis{font-style:italic}.better-codeblocks .hljs-strong{font-weight:700}@media screen and (-ms-high-contrast:active){.better-codeblocks .hljs-addition,.better-codeblocks .hljs-attribute,.better-codeblocks .hljs-built_in,.better-codeblocks .hljs-bullet,.better-codeblocks .hljs-comment,.better-codeblocks .hljs-link,.better-codeblocks .hljs-literal,.better-codeblocks .hljs-meta,.better-codeblocks .hljs-number,.better-codeblocks .hljs-params,.better-codeblocks .hljs-quote,.better-codeblocks .hljs-string,.better-codeblocks .hljs-symbol,.better-codeblocks .hljs-type{color:highlight}.better-codeblocks .hljs-keyword,.better-codeblocks .hljs-selector-tag{font-weight:700}}
+*/
+.better-codeblocks .hljs {
+  background: #fefefe;
+  color: #545454;
+}
+.better-codeblocks .hljs-comment,
+.better-codeblocks .hljs-quote {
+  color: #696969;
+}
+.better-codeblocks .hljs-deletion,
+.better-codeblocks .hljs-name,
+.better-codeblocks .hljs-regexp,
+.better-codeblocks .hljs-selector-class,
+.better-codeblocks .hljs-selector-id,
+.better-codeblocks .hljs-tag,
+.better-codeblocks .hljs-template-variable,
+.better-codeblocks .hljs-variable {
+  color: #d91e18;
+}
+.better-codeblocks .hljs-attribute,
+.better-codeblocks .hljs-built_in,
+.better-codeblocks .hljs-link,
+.better-codeblocks .hljs-literal,
+.better-codeblocks .hljs-meta,
+.better-codeblocks .hljs-number,
+.better-codeblocks .hljs-params,
+.better-codeblocks .hljs-type {
+  color: #aa5d00;
+}
+.better-codeblocks .hljs-addition,
+.better-codeblocks .hljs-bullet,
+.better-codeblocks .hljs-string,
+.better-codeblocks .hljs-symbol {
+  color: green;
+}
+.better-codeblocks .hljs-section,
+.better-codeblocks .hljs-title {
+  color: #007faa;
+}
+.better-codeblocks .hljs-keyword,
+.better-codeblocks .hljs-selector-tag {
+  color: #7928a1;
+}
+.better-codeblocks .hljs-emphasis {
+  font-style: italic;
+}
+.better-codeblocks .hljs-strong {
+  font-weight: 700;
+}
+@media screen and (-ms-high-contrast: active) {
+  .better-codeblocks .hljs-addition,
+  .better-codeblocks .hljs-attribute,
+  .better-codeblocks .hljs-built_in,
+  .better-codeblocks .hljs-bullet,
+  .better-codeblocks .hljs-comment,
+  .better-codeblocks .hljs-link,
+  .better-codeblocks .hljs-literal,
+  .better-codeblocks .hljs-meta,
+  .better-codeblocks .hljs-number,
+  .better-codeblocks .hljs-params,
+  .better-codeblocks .hljs-quote,
+  .better-codeblocks .hljs-string,
+  .better-codeblocks .hljs-symbol,
+  .better-codeblocks .hljs-type {
+    color: highlight;
+  }
+  .better-codeblocks .hljs-keyword,
+  .better-codeblocks .hljs-selector-tag {
+    font-weight: 700;
+  }
+}

@@ -14,18 +14,18 @@ export const cfg = await settings.init<SettingsType>("dev.kingfish.CopyRaw");
 export { Settings } from "./Settings";
 
 export async function start(): Promise<void> {
-  const mod = await webpack.waitForModule(
+  const mod = await webpack.waitForModule<Record<string, unknown>>(
     webpack.filters.bySource(
       'document.queryCommandEnabled("copy")||document.queryCommandSupported("copy")',
     ),
-  ) as Record<string, unknown>;
+  );
 
   const Clipboard: {
     SUPPORTED: boolean;
     copy: (content: string) => unknown;
   } = {
     copy: Object.values(mod).find((e) => typeof e === "function") as (args: string) => void,
-    SUPPORTED: Object.values(mod).find((e) => typeof e === "boolean") as unknown as boolean,
+    SUPPORTED: Object.values(mod).find((e) => typeof e === "boolean") as boolean,
   };
 
   const classes: Record<string, string> = await webpack.waitForModule(
@@ -34,7 +34,7 @@ export async function start(): Promise<void> {
 
   function onClick(msg: Message) {
     return () => createModal(msg, Clipboard, classes);
-  };
+  }
 
   function onContextMenu(msg: Message) {
     return () => {
@@ -47,7 +47,7 @@ export async function start(): Promise<void> {
           common.toast.Kind.FAILURE,
         );
       }
-    }
+    };
   }
 
   injector.utils.addPopoverButton((msg: Message, _: Channel) => {

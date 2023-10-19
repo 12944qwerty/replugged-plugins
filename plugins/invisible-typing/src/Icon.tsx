@@ -16,7 +16,7 @@ export const Icon = ({ type }: { type?: { analyticsName?: string } }) => {
   const channelWise = cfg.get("button", true) ? cfg.get("channelWise", true) : false;
   const channelsList = cfg.get("channels", { [channelId]: globalInvisible });
   const [enabled, setEnabled] = React.useState(
-    channelWise ? channelsList[channelId] ?? globalInvisible : globalInvisible,
+    channelWise ? channelsList[channelId] : globalInvisible,
   );
   return (
     <div key={`${enabled}`}>

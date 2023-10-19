@@ -27,6 +27,7 @@ function cleanMessage(msg: Message) {
         break;
       default:
         // phone number, email, etc
+        // eslint-disable-next-line @typescript-eslint/no-dynamic-delete
         delete clone.author[key];
     }
   }
@@ -34,10 +35,10 @@ function cleanMessage(msg: Message) {
   return clone;
 }
 
-type ClipboardType = {
+interface ClipboardType {
   SUPPORTED: boolean;
   copy: (content: string) => unknown;
-};
+}
 
 export default function (msg: Message, Clipboard: ClipboardType, classes: Record<string, string>) {
   msg = cleanMessage(msg);

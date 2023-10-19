@@ -8,5 +8,5 @@ export function Settings() {
       note="Swap the left/right click functionality">
       Swap left/right click
     </components.SwitchItem>
-  )
+  );
 }

@@ -2,13 +2,12 @@ import { components, webpack } from "replugged";
 import { User } from "discord-types/general";
 import { SettingsType, badge, cfg, profile } from ".";
 
-const { profileBadge24 } = webpack.getByProps("profileBadge24") as Record<string, string>;
-const { anchor, anchorUnderlineOnHover } = webpack.getByProps(
+const { profileBadge24 } = await webpack.waitForProps("profileBadge24")!;
+const { anchor, anchorUnderlineOnHover } = await webpack.waitForProps(
   "anchor",
   "anchorUnderlineOnHover",
-) as Record<string, string>;
+)!;
 
-/* eslint-disable camelcase */
 const BadgeSettingMapping: Record<string, keyof SettingsType> = {
   legacy_username: "legacyUsername",
   staff: "staff",
@@ -53,10 +52,10 @@ export function badge(badge: badge): JSX.Element {
 export const cache: Record<string, User> = {};
 
 export default function Badges(getImageUrl: (id: string) => string) {
-  return (props: { user: profile }): JSX.Element | null => {
+  return (props: { user?: profile }): JSX.Element | null => {
     let { user } = props;
 
-    if (user && user.badges) {
+    if (user) {
       let badges = user.badges
         .map((badge) => {
           badge.src = getImageUrl(badge.icon);
@@ -73,7 +72,7 @@ export default function Badges(getImageUrl: (id: string) => string) {
         })
         .filter(Boolean) as badge[];
 
-      return <div className="badges-everywhere">{badges.map((b) => b && badge(b))}</div>;
+      return <div className="badges-everywhere">{badges.map(badge)}</div>;
     } else {
       return null;
     }

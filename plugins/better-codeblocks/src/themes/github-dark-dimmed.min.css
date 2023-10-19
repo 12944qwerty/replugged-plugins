@@ -1,4 +1,11 @@
- .better-codeblocks .hljs{display:block;overflow-x:auto;padding:1em}.better-codeblocks .hljs{padding:3px 5px}/*!
+.better-codeblocks .hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+}
+.better-codeblocks .hljs {
+  padding: 3px 5px;
+} /*!
   Theme: GitHub Dark Dimmed
   Description: Dark dimmed theme as seen on github.com
   Author: github.com
@@ -6,4 +13,81 @@
   Updated: 2021-05-15
 
   Colors taken from GitHub's CSS
-*/.better-codeblocks .hljs{color:#adbac7;background:#22272e}.better-codeblocks .hljs-doctag,.better-codeblocks .hljs-keyword,.better-codeblocks .hljs-meta .better-codeblocks .hljs-keyword,.better-codeblocks .hljs-template-tag,.better-codeblocks .hljs-template-variable,.better-codeblocks .hljs-type,.better-codeblocks .hljs-variable.language_{color:#f47067}.better-codeblocks .hljs-title,.better-codeblocks .hljs-title.class_,.better-codeblocks .hljs-title.class_.inherited__,.better-codeblocks .hljs-title.function_{color:#dcbdfb}.better-codeblocks .hljs-attr,.better-codeblocks .hljs-attribute,.better-codeblocks .hljs-literal,.better-codeblocks .hljs-meta,.better-codeblocks .hljs-number,.better-codeblocks .hljs-operator,.better-codeblocks .hljs-selector-attr,.better-codeblocks .hljs-selector-class,.better-codeblocks .hljs-selector-id,.better-codeblocks .hljs-variable{color:#6cb6ff}.better-codeblocks .hljs-meta .better-codeblocks .hljs-string,.better-codeblocks .hljs-regexp,.better-codeblocks .hljs-string{color:#96d0ff}.better-codeblocks .hljs-built_in,.better-codeblocks .hljs-symbol{color:#f69d50}.better-codeblocks .hljs-,.better-codeblocks .hljs-comment,.better-codeblocks .hljs-formula{color:#768390}.better-codeblocks .hljs-name,.better-codeblocks .hljs-quote,.better-codeblocks .hljs-selector-pseudo,.better-codeblocks .hljs-selector-tag{color:#8ddb8c}.better-codeblocks .hljs-subst{color:#adbac7}.better-codeblocks .hljs-section{color:#316dca;font-weight:700}.better-codeblocks .hljs-bullet{color:#eac55f}.better-codeblocks .hljs-emphasis{color:#adbac7;font-style:italic}.better-codeblocks .hljs-strong{color:#adbac7;font-weight:700}.better-codeblocks .hljs-addition{color:#b4f1b4;background-color:#1b4721}.better-codeblocks .hljs-deletion{color:#ffd8d3;background-color:#78191b}
+*/
+.better-codeblocks .hljs {
+  color: #adbac7;
+  background: #22272e;
+}
+.better-codeblocks .hljs-doctag,
+.better-codeblocks .hljs-keyword,
+.better-codeblocks .hljs-meta .better-codeblocks .hljs-keyword,
+.better-codeblocks .hljs-template-tag,
+.better-codeblocks .hljs-template-variable,
+.better-codeblocks .hljs-type,
+.better-codeblocks .hljs-variable.language_ {
+  color: #f47067;
+}
+.better-codeblocks .hljs-title,
+.better-codeblocks .hljs-title.class_,
+.better-codeblocks .hljs-title.class_.inherited__,
+.better-codeblocks .hljs-title.function_ {
+  color: #dcbdfb;
+}
+.better-codeblocks .hljs-attr,
+.better-codeblocks .hljs-attribute,
+.better-codeblocks .hljs-literal,
+.better-codeblocks .hljs-meta,
+.better-codeblocks .hljs-number,
+.better-codeblocks .hljs-operator,
+.better-codeblocks .hljs-selector-attr,
+.better-codeblocks .hljs-selector-class,
+.better-codeblocks .hljs-selector-id,
+.better-codeblocks .hljs-variable {
+  color: #6cb6ff;
+}
+.better-codeblocks .hljs-meta .better-codeblocks .hljs-string,
+.better-codeblocks .hljs-regexp,
+.better-codeblocks .hljs-string {
+  color: #96d0ff;
+}
+.better-codeblocks .hljs-built_in,
+.better-codeblocks .hljs-symbol {
+  color: #f69d50;
+}
+.better-codeblocks .hljs-,
+.better-codeblocks .hljs-comment,
+.better-codeblocks .hljs-formula {
+  color: #768390;
+}
+.better-codeblocks .hljs-name,
+.better-codeblocks .hljs-quote,
+.better-codeblocks .hljs-selector-pseudo,
+.better-codeblocks .hljs-selector-tag {
+  color: #8ddb8c;
+}
+.better-codeblocks .hljs-subst {
+  color: #adbac7;
+}
+.better-codeblocks .hljs-section {
+  color: #316dca;
+  font-weight: 700;
+}
+.better-codeblocks .hljs-bullet {
+  color: #eac55f;
+}
+.better-codeblocks .hljs-emphasis {
+  color: #adbac7;
+  font-style: italic;
+}
+.better-codeblocks .hljs-strong {
+  color: #adbac7;
+  font-weight: 700;
+}
+.better-codeblocks .hljs-addition {
+  color: #b4f1b4;
+  background-color: #1b4721;
+}
+.better-codeblocks .hljs-deletion {
+  color: #ffd8d3;
+  background-color: #78191b;
+}

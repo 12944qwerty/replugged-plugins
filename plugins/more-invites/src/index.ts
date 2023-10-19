@@ -20,11 +20,11 @@ const cache: Record<
 > = {};
 
 async function getCode(code: string): Promise<string | undefined> {
-  if (cache[code] && !cache[code].fetching) {
+  if (!cache[code].fetching) {
     return cache[code].code;
   }
 
-  if (!cache[code]?.fetching) {
+  if (!cache[code].fetching) {
     cache[code] = {
       fetching: true,
     };
@@ -61,7 +61,7 @@ export async function start(): Promise<void> {
   );
   const key = webpack.getFunctionKeyBySource(mod, ".URL_REGEX)");
 
-  if (mod && key) {
+  if (key) {
     inject.after(mod, key, ([args], res) => {
       if (args) {
         const matches = [...new Set([...args.matchAll(DSC_REGEX)].map((match) => match[1]))];

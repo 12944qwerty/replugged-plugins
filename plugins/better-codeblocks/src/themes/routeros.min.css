@@ -1,1 +1,76 @@
- .better-codeblocks .hljs{display:block;overflow-x:auto;padding:1em}.better-codeblocks .hljs{padding:3px 5px}.better-codeblocks .hljs{color:#444;background:#f0f0f0}.better-codeblocks .hljs-subst{color:#444}.better-codeblocks .hljs-comment{color:#888}.better-codeblocks .hljs-doctag,.better-codeblocks .hljs-keyword,.better-codeblocks .hljs-meta .better-codeblocks .hljs-keyword,.better-codeblocks .hljs-name,.better-codeblocks .hljs-selector-tag{font-weight:700}.better-codeblocks .hljs-attribute{color:#0e9a00}.better-codeblocks .hljs-function{color:#99069a}.better-codeblocks .hljs-deletion,.better-codeblocks .hljs-number,.better-codeblocks .hljs-quote,.better-codeblocks .hljs-selector-class,.better-codeblocks .hljs-selector-id,.better-codeblocks .hljs-string,.better-codeblocks .hljs-template-tag,.better-codeblocks .hljs-type{color:#800}.better-codeblocks .hljs-section,.better-codeblocks .hljs-title{color:#800;font-weight:700}.better-codeblocks .hljs-link,.better-codeblocks .hljs-regexp,.better-codeblocks .hljs-selector-attr,.better-codeblocks .hljs-selector-pseudo,.better-codeblocks .hljs-symbol,.better-codeblocks .hljs-template-variable,.better-codeblocks .hljs-variable{color:#bc6060}.better-codeblocks .hljs-literal{color:#78a960}.better-codeblocks .hljs-addition,.better-codeblocks .hljs-built_in,.better-codeblocks .hljs-bullet,.better-codeblocks .hljs-{color:#0c9a9a}.better-codeblocks .hljs-meta{color:#1f7199}.better-codeblocks .hljs-meta .better-codeblocks .hljs-string{color:#4d99bf}.better-codeblocks .hljs-emphasis{font-style:italic}.better-codeblocks .hljs-strong{font-weight:700}
+.better-codeblocks .hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+}
+.better-codeblocks .hljs {
+  padding: 3px 5px;
+}
+.better-codeblocks .hljs {
+  color: #444;
+  background: #f0f0f0;
+}
+.better-codeblocks .hljs-subst {
+  color: #444;
+}
+.better-codeblocks .hljs-comment {
+  color: #888;
+}
+.better-codeblocks .hljs-doctag,
+.better-codeblocks .hljs-keyword,
+.better-codeblocks .hljs-meta .better-codeblocks .hljs-keyword,
+.better-codeblocks .hljs-name,
+.better-codeblocks .hljs-selector-tag {
+  font-weight: 700;
+}
+.better-codeblocks .hljs-attribute {
+  color: #0e9a00;
+}
+.better-codeblocks .hljs-function {
+  color: #99069a;
+}
+.better-codeblocks .hljs-deletion,
+.better-codeblocks .hljs-number,
+.better-codeblocks .hljs-quote,
+.better-codeblocks .hljs-selector-class,
+.better-codeblocks .hljs-selector-id,
+.better-codeblocks .hljs-string,
+.better-codeblocks .hljs-template-tag,
+.better-codeblocks .hljs-type {
+  color: #800;
+}
+.better-codeblocks .hljs-section,
+.better-codeblocks .hljs-title {
+  color: #800;
+  font-weight: 700;
+}
+.better-codeblocks .hljs-link,
+.better-codeblocks .hljs-regexp,
+.better-codeblocks .hljs-selector-attr,
+.better-codeblocks .hljs-selector-pseudo,
+.better-codeblocks .hljs-symbol,
+.better-codeblocks .hljs-template-variable,
+.better-codeblocks .hljs-variable {
+  color: #bc6060;
+}
+.better-codeblocks .hljs-literal {
+  color: #78a960;
+}
+.better-codeblocks .hljs-addition,
+.better-codeblocks .hljs-built_in,
+.better-codeblocks .hljs-bullet,
+.better-codeblocks .hljs- {
+  color: #0c9a9a;
+}
+.better-codeblocks .hljs-meta {
+  color: #1f7199;
+}
+.better-codeblocks .hljs-meta .better-codeblocks .hljs-string {
+  color: #4d99bf;
+}
+.better-codeblocks .hljs-emphasis {
+  font-style: italic;
+}
+.better-codeblocks .hljs-strong {
+  font-weight: 700;
+}

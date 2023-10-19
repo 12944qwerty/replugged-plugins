@@ -39,7 +39,7 @@ export type profile = {
 
 export async function start(): Promise<void> {
   const { getUserProfile, isFetchingProfile } = await webpack.waitForModule<
-    Record<string, (id: string) => profile>
+    Record<string, (id: string) => profile | undefined>
   >(webpack.filters.byProps("getUserProfile"));
 
   const getImageUrl: (id: string) => string = webpack.getFunctionBySource<(id: string) => string>(
@@ -68,7 +68,7 @@ export async function start(): Promise<void> {
 
   injector.after(mod, "Z", ([args], res: React.ReactElement) => {
     const { author } = args.message;
-    const userProfile: profile = getUserProfile(author.id);
+    const userProfile = getUserProfile(author.id);
     if (!cfg.get("avoidrates", true) && !userProfile && !isFetchingProfile(author.id)) {
       if (fetchUser) {
         fetchUser(author.id);
@@ -76,7 +76,7 @@ export async function start(): Promise<void> {
         return res;
       }
     }
-    res?.props?.children[3]?.props?.children?.splice(
+    res.props?.children[3]?.props?.children?.splice(
       1,
       0,
       React.createElement(Badges, { user: getUserProfile(author.id) }),

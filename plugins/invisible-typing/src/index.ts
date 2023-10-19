@@ -17,26 +17,23 @@ export const cfg = await settings.init<SettingsType>("dev.kingfish.InvisibleTypi
 
 export async function start(): Promise<void> {
   const typingMod = await webpack.waitForModule<{
-    startTyping: (channelId: string) => void;
+    startTyping: (channelId: string) => unknown;
   }>(webpack.filters.byProps("startTyping"));
-  const getChannelMod = await webpack.waitForModule<{
-    getChannel: (id: string) => {
-      name: string;
-    };
-  }>(webpack.filters.byProps("getChannel"));
 
-  if (typingMod && getChannelMod) {
-    inject.instead(typingMod, "startTyping", ([channelId]: [string], original: typeof typingMod) => {
+  inject.instead(
+    typingMod,
+    "startTyping",
+    ([channelId]: [string], original: (channelId: string) => unknown) => {
       const globalInvisible = cfg.get("invisible", true);
       const channelWise = cfg.get("button", true) ? cfg.get("channelWise", true) : false;
       const channels = cfg.get("channels", { [channelId]: globalInvisible });
-      if (channelWise ? channels[channelId] ?? globalInvisible : globalInvisible) {
+      if (channelWise ? channels[channelId] : globalInvisible) {
         return null;
       } else {
         return original(channelId);
       }
-    });
-  }
+    },
+  );
 }
 
 export function stop(): void {

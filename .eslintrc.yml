@@ -1,5 +1,6 @@
 root: true
-extends: eslint-config-dmitmel/presets/node
+extends:
+  - eslint-config-dmitmel/presets/node
 env:
   browser: true
 parser: "@typescript-eslint/parser"
@@ -7,95 +8,55 @@ parserOptions:
   sourceType: module
 plugins:
   - "@typescript-eslint"
-
-settings:
-  node:
-    tryExtensions: ['.tsx', '.ts', '.jsx', '.js', '.json', '.node']
-
 rules:
+  func-names: off
   node/no-unsupported-features/es-syntax:
     - error
     - ignores:
         - modules
+        - dynamicImport
+  node/no-unsupported-features/es-builtins:
+    - error
+    - ignores:
+        - globalThis
+  node/no-unsupported-features/node-builtins:
+    - error
+    - ignores:
+        - fs.promises
+
+  node/no-missing-require: off
+  node/no-missing-import: off
+  node/no-unpublished-import: off
+  node/no-unpublished-require: off
+  node/shebang: off
+  no-process-exit: off
+  no-undef: off
+  no-unused-vars: off
+  no-undefined: off
+  "@typescript-eslint/no-unused-vars": error
+  camelcase: off
 
 overrides:
-  - files: '**/*.ts*'
-    extends:
-      - eslint-config-dmitmel/presets/typescript-addon
-    parserOptions:
-      project: 'tsconfig.json'
-      sourceType: module
+  - files: "**/*.{ts,tsx}"
+    extends: eslint-config-dmitmel/presets/typescript-addon
     rules:
-      eqeqeq: 0
-      require-await: 0
-      no-undefined: 0
-      # May the Gods smite me for these two.
-      'node/no-unpublished-import': 0
-      'node/no-missing-import': 0
-      '@typescript-eslint/no-dynamic-delete': 0
-      '@typescript-eslint/no-explicit-any': 0
-      '@typescript-eslint/no-non-null-asserted-optional-chain': 0
-      '@typescript-eslint/naming-convention': 0
+      node/no-missing-import: off
+      eqeqeq: off
+      \@typescript-eslint/no-dynamic-delete: off
+      no-return-assign: off
+      no-void: off
+      consistent-return: off
 
-# root: true
-# extends:
-#   - eslint-config-dmitmel/presets/node
-# env:
-#   browser: true
-# parser: "@typescript-eslint/parser"
-# parserOptions:
-#   sourceType: module
-# plugins:
-#   - "@typescript-eslint"
-# rules:
-#   func-names: off
-#   node/no-unsupported-features/es-syntax:
-#     - error
-#     - ignores:
-#         - modules
-#         - dynamicImport
-#   node/no-unsupported-features/es-builtins:
-#     - error
-#     - ignores:
-#         - globalThis
-#   node/no-unsupported-features/node-builtins:
-#     - error
-#     - ignores:
-#         - fs.promises
-#
-#   node/no-missing-require: off
-#   node/no-missing-import: off
-#   node/no-unpublished-import: off
-#   node/no-unpublished-require: off
-#   node/shebang: off
-#   no-process-exit: off
-#   no-undef: off
-#   no-unused-vars: off
-#   no-undefined: off
-#   "@typescript-eslint/no-unused-vars": error
-#   camelcase: off
-#
-# overrides:
-#   - files: "**/*.{ts,tsx}"
-#     extends: eslint-config-dmitmel/presets/typescript-addon
-#     rules:
-#       node/no-missing-import: off
-#       eqeqeq: off
-#       \@typescript-eslint/no-dynamic-delete: off
-#       no-return-assign: off
-#       no-void: off
-#       consistent-return: off
-#
-#   - files: "**/plugins/**/*.{ts,tsx}"
-#     extends: eslint-config-dmitmel/rules/typescript/with-type-checking
-#     rules:
-#       "@typescript-eslint/explicit-function-return-type": off
-#       "@typescript-eslint/naming-convention": off
-#
-#   - files: "**/*.d.ts"
-#     rules:
-#       no-var: off
-#
-#   - files: "plugins/**/*.{ts,tsx}"
-#     parserOptions:
-#       project: tsconfig.json
+  - files: "**/plugins/**/*.{ts,tsx}"
+    extends: eslint-config-dmitmel/rules/typescript/with-type-checking
+    rules:
+      "@typescript-eslint/explicit-function-return-type": off
+      "@typescript-eslint/naming-convention": off
+
+  - files: "**/*.d.ts"
+    rules:
+      no-var: off
+
+  - files: "plugins/**/*.{ts,tsx}"
+    parserOptions:
+      project: tsconfig.json

@@ -1,4 +1,11 @@
- .better-codeblocks .hljs{display:block;overflow-x:auto;padding:1em}.better-codeblocks .hljs{padding:3px 5px}/*!
+.better-codeblocks .hljs {
+  display: block;
+  overflow-x: auto;
+  padding: 1em;
+}
+.better-codeblocks .hljs {
+  padding: 3px 5px;
+} /*!
   Theme: StackOverflow Dark
   Description: Dark theme as used on stackoverflow.com
   Author: stackoverflow.com
@@ -10,4 +17,73 @@
   Updated for @stackoverflow/stacks v0.64.0
   Code Blocks: /blob/v0.64.0/lib/css/components/_stacks--blocks.less
   Colors: /blob/v0.64.0/lib/css/exports/_stacks-constants-colors.less
-*/.better-codeblocks .hljs{color:#fff;background:#1c1b1b}.better-codeblocks .hljs-subst{color:#fff}.better-codeblocks .hljs-comment{color:#999}.better-codeblocks .hljs-attr,.better-codeblocks .hljs-doctag,.better-codeblocks .hljs-keyword,.better-codeblocks .hljs-meta .better-codeblocks .hljs-keyword,.better-codeblocks .hljs-section,.better-codeblocks .hljs-selector-tag{color:#88aece}.better-codeblocks .hljs-attribute{color:#c59bc1}.better-codeblocks .hljs-name,.better-codeblocks .hljs-number,.better-codeblocks .hljs-quote,.better-codeblocks .hljs-selector-id,.better-codeblocks .hljs-template-tag,.better-codeblocks .hljs-type{color:#f08d49}.better-codeblocks .hljs-selector-class{color:#88aece}.better-codeblocks .hljs-link,.better-codeblocks .hljs-regexp,.better-codeblocks .hljs-selector-attr,.better-codeblocks .hljs-string,.better-codeblocks .hljs-symbol,.better-codeblocks .hljs-template-variable,.better-codeblocks .hljs-variable{color:#b5bd68}.better-codeblocks .hljs-meta,.better-codeblocks .hljs-selector-pseudo{color:#88aece}.better-codeblocks .hljs-built_in,.better-codeblocks .hljs-literal,.better-codeblocks .hljs-title{color:#f08d49}.better-codeblocks .hljs-bullet,.better-codeblocks .hljs-{color:#ccc}.better-codeblocks .hljs-meta .better-codeblocks .hljs-string{color:#b5bd68}.better-codeblocks .hljs-deletion{color:#de7176}.better-codeblocks .hljs-addition{color:#76c490}.better-codeblocks .hljs-emphasis{font-style:italic}.better-codeblocks .hljs-strong{font-weight:700}
+*/
+.better-codeblocks .hljs {
+  color: #fff;
+  background: #1c1b1b;
+}
+.better-codeblocks .hljs-subst {
+  color: #fff;
+}
+.better-codeblocks .hljs-comment {
+  color: #999;
+}
+.better-codeblocks .hljs-attr,
+.better-codeblocks .hljs-doctag,
+.better-codeblocks .hljs-keyword,
+.better-codeblocks .hljs-meta .better-codeblocks .hljs-keyword,
+.better-codeblocks .hljs-section,
+.better-codeblocks .hljs-selector-tag {
+  color: #88aece;
+}
+.better-codeblocks .hljs-attribute {
+  color: #c59bc1;
+}
+.better-codeblocks .hljs-name,
+.better-codeblocks .hljs-number,
+.better-codeblocks .hljs-quote,
+.better-codeblocks .hljs-selector-id,
+.better-codeblocks .hljs-template-tag,
+.better-codeblocks .hljs-type {
+  color: #f08d49;
+}
+.better-codeblocks .hljs-selector-class {
+  color: #88aece;
+}
+.better-codeblocks .hljs-link,
+.better-codeblocks .hljs-regexp,
+.better-codeblocks .hljs-selector-attr,
+.better-codeblocks .hljs-string,
+.better-codeblocks .hljs-symbol,
+.better-codeblocks .hljs-template-variable,
+.better-codeblocks .hljs-variable {
+  color: #b5bd68;
+}
+.better-codeblocks .hljs-meta,
+.better-codeblocks .hljs-selector-pseudo {
+  color: #88aece;
+}
+.better-codeblocks .hljs-built_in,
+.better-codeblocks .hljs-literal,
+.better-codeblocks .hljs-title {
+  color: #f08d49;
+}
+.better-codeblocks .hljs-bullet,
+.better-codeblocks .hljs- {
+  color: #ccc;
+}
+.better-codeblocks .hljs-meta .better-codeblocks .hljs-string {
+  color: #b5bd68;
+}
+.better-codeblocks .hljs-deletion {
+  color: #de7176;
+}
+.better-codeblocks .hljs-addition {
+  color: #76c490;
+}
+.better-codeblocks .hljs-emphasis {
+  font-style: italic;
+}
+.better-codeblocks .hljs-strong {
+  font-weight: 700;
+}
