@@ -1,0 +1,22 @@
+.invisible-typing-button svg {
+  color: var(--interactive-normal);
+  overflow: visible;
+}
+
+.invisible-typing-button .disabled-stroke-through {
+  position: absolute;
+  transform: translateX(-15px) translateY(530px) rotate(-45deg);
+}
+
+.invisible-typing-button {
+  margin-top: 3px;
+  background: transparent;
+}
+
+.invisible-typing-button:hover:not(.disabled) svg {
+  color: var(--interactive-hover);
+}
+
+.invistype-disabled {
+  display: none;
+}

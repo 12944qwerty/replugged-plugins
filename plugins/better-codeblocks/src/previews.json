@@ -1,0 +1,22 @@
+[
+  {
+    "lang": "js",
+    "code": "const btn = document.getElementById('btn');\nlet count = 0;\nfunction render() {\n  btn.innerText = `Count: ${count}`;\n}\nbtn.addEventListener('click', () => {\n  // Count from 1 to 10.\n  if (count < 10) {\n    count += 1;\n    render();\n  }\n})"
+  },
+  {
+    "lang": "py",
+    "code": "import math \n \ndef primeFactors(n): \n    while n % 2 == 0: \n        print(2) \n        n = n // 2 \n    for i in range(3,int(math.sqrt(n))+1,2): \n        while n % i== 0: \n            print(i) \n            n = n // i \n    if n > 2: \n        print(n) \n \n# 3, 3, 5, 7 \nprimeFactors(315)"
+  },
+  {
+    "lang": "css",
+    "code": "@font-face { \n  font-family: Chunkfive; src: url('Chunkfive.otf'); \n} \n \nbody, .usertext { \n  color: #F0F0F0; background: #600; \n  font-family: Chunkfive, sans; \n  --heading-1: 30px/32px Helvetica, sans-serif; \n} \n \n@import url(print.css); \n@media print { \n  a[href^=http]::after { \n    content: attr(href) \n  } \n} "
+  },
+  {
+    "lang": "tsx",
+    "code": "/* eslint-disable header/header */ \nimport React from \"react\"; \n \nconst handleClick = async () => \n    console.log((await import(\"@webpack/common\")).Clipboard.copy(\"\u200b\")); \n \nexport const Example: React.FC<{ \n    real: boolean, \n    shigged?: number, \n}> = ({ real, shigged }) => <> \n    <p>{`Shigg${real ? `ies${shigged === 0x1B ? \"t\" : \"\"}` : \"y\"}`}</p> \n    <button onClick={handleClick}>Click Me</button> \n</>; "
+  },
+  {
+    "lang": "html",
+    "code": "<!DOCTYPE html> \n<title>Title</title> \n \n<style>body {width: 500px;}</style> \n \n<script type=\"application/javascript\"> \n  function $init() {return true;} \n</script> \n \n<body> \n  <p checked class=\"title\" id='title'>Title</p> \n  <!-- here goes the rest of the page --> \n</body> "
+  }
+]

@@ -1,0 +1,21 @@
+{
+  "id": "dev.kingfish.InvisibleTyping",
+  "name": "Invisible Typing",
+  "description": "Make your typing invisible",
+  "author": {
+    "name": "King Fish",
+    "discordID": "499400512559382538",
+    "github": "12944qwerty"
+  },
+  "version": "1.0.4",
+  "updater": {
+    "type": "store",
+    "id": "dev.kingfish.InvisibleTyping"
+  },
+  "license": "MIT",
+  "type": "replugged-plugin",
+  "renderer": "src/index.ts",
+  "plaintextPatches": "src/plaintextPatches.ts",
+  "source": "https://github.com/qwerty-mods/invisible-typing",
+  "image": "https://cdn.discordapp.com/attachments/1132527213401612289/1133853437319188641/invistyping.gif"
+}

@@ -1,0 +1,102 @@
+/* https://github.com/Vap0r1ze/vpc-shiki/blob/main/style.css */
+
+@import url("https://cdn.jsdelivr.net/gh/devicons/devicon@v2.10.1/devicon.min.css");
+
+.better-codeblocks {
+  border-radius: 4px;
+  border: 1px solid var(--background-tertiary);
+}
+.better-codeblocks code {
+  display: block;
+  overflow-x: auto;
+  padding: 0.5em;
+  position: relative;
+
+  font-size: 0.875rem;
+  line-height: 1.125rem;
+  text-indent: 0;
+  white-space: pre-wrap;
+  background: transparent;
+  color: "#FFF"; /* default color in case theme doesn't do it */
+  border: none;
+}
+
+.better-codeblocks [class^="devicon-"],
+.better-codeblocks [class*=" devicon-"] {
+  margin-right: 8px;
+  user-select: none;
+}
+
+.better-codeblocks-plain code {
+  padding-top: 8px;
+}
+
+.better-codeblocks-btns {
+  font-size: 1em;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  opacity: 0;
+}
+.better-codeblocks:not(.better-codeblocks-preview):hover .better-codeblocks-btns {
+  opacity: 1;
+}
+
+.better-codeblocks-btn {
+  border-radius: 4px 4px 0 0;
+  padding: 4px 8px;
+}
+.better-codeblocks-btn ~ .better-codeblocks-btn {
+  margin-left: 4px;
+}
+.better-codeblocks-btn:last-child {
+  border-radius: 4px 0;
+}
+
+.better-codeblocks-spinner-container {
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  position: absolute;
+  justify-content: center;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+.better-codeblocks-preview {
+  margin-bottom: 2em;
+}
+
+.better-codeblocks-lang {
+  padding: 0 5px;
+  margin-bottom: 6px;
+  font-weight: bold;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+}
+
+.better-codeblocks-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.better-codeblocks-table tr {
+  height: 19px;
+  width: 100%;
+}
+
+.better-codeblocks td:first-child {
+  border-right: 1px solid transparent;
+  padding-left: 5px;
+  padding-right: 8px;
+  user-select: none;
+}
+
+.better-codeblocks td:last-child {
+  padding-left: 8px;
+  word-break: break-word;
+  width: 100%;
+}

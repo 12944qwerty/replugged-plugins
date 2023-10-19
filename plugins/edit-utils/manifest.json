@@ -1,0 +1,20 @@
+{
+  "id": "dev.kingfish.EditUtils",
+  "name": "Edit Utils",
+  "description": "Shortcuts to edit messages",
+  "author": {
+    "name": "King Fish",
+    "discordID": "499400512559382538",
+    "github": "12944qwerty"
+  },
+  "version": "1.0.3",
+  "updater": {
+    "type": "store",
+    "id": "dev.kingfish.EditUtils"
+  },
+  "license": "MIT",
+  "type": "replugged-plugin",
+  "renderer": "src/index.ts",
+  "source": "https://github.com/qwerty-mods/edit-utils",
+  "image": "https://media.discordapp.net/attachments/1069817977064665192/1069817977710583818/double_click_edit.gif"
+}

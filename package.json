@@ -8,15 +8,16 @@
         "pnpm": ">=8.0.0"
     },
     "scripts": {
-        "build": "tsx scripts/build.ts",
-        "watch": "pnpm build --watch",
-        "bundle": "tsx scripts/bundle.ts",
+        "build": "replugged build plugin",
+        "watch": "replugged build plugin --watch",
+        "bundle": "replugged bundle plugin",
         "build-and-bundle": "pnpm run build --no-install && pnpm run bundle",
+        "release": "replugged release",
         "check": "tsc --noEmit",
-        "prettier:check": "prettier ./src --check",
-        "eslint:check": "eslint ./src",
-        "prettier:fix": "prettier ./src --write",
-        "eslint:fix": "eslint ./src --fix",
+        "prettier:check": "prettier ./plugins ./scripts --check",
+        "eslint:check": "eslint ./plugins/**/*.ts* ./scripts/*.ts",
+        "prettier:fix": "prettier ./plugins ./scripts --write",
+        "eslint:fix": "eslint ./plugins/**/*.ts* ./scripts/*.ts --fix",
         "lint": "pnpm run prettier:check && pnpm run eslint:check && pnpm run check",
         "lint:fix": "pnpm run prettier:fix && pnpm run eslint:fix"
     },
@@ -37,8 +38,11 @@
         "eslint-plugin-node": "^11.1.0",
         "eslint-plugin-react": "^7.33.2",
         "prettier": "^2.8.8",
-        "replugged": "4.5.1",
+        "replugged": "^4.7.4",
         "tsx": "^3.12.8",
         "typescript": "^4.9.5"
+    },
+    "devDependencies": {
+        "discord-types": "^1.3.3"
     }
 }

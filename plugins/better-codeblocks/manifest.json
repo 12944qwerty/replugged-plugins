@@ -1,0 +1,23 @@
+{
+  "id": "dev.kingfish.BetterCodeblocks",
+  "name": "Better Codeblocks",
+  "description": "Improves the codeblocks",
+  "author": {
+    "name": "King Fish",
+    "discordID": "499400512559382538",
+    "github": "12944qwerty"
+  },
+  "version": "0.2.3",
+  "updater": {
+    "type": "store",
+    "id": "dev.kingfish.BetterCodeblocks"
+  },
+  "license": "MIT",
+  "type": "replugged-plugin",
+  "renderer": "src/index.ts",
+  "source": "https://github.com/qwerty-mods/better-codeblocks",
+  "image": [
+    "https://cdn.discordapp.com/attachments/1136351214754353373/1136351215349927987/image.png",
+    "https://cdn.discordapp.com/attachments/1132527213401612289/1136404322293383369/image.png"
+  ]
+}

@@ -1,0 +1,587 @@
+[
+  {
+    "name": "ABAP",
+    "id": "abap"
+  },
+  {
+    "name": "ActionScript",
+    "id": "actionscript-3",
+    "aliases": ["as", "actionscript"]
+  },
+  {
+    "name": "Ada",
+    "id": "ada"
+  },
+  {
+    "name": "Ansi",
+    "id": "ansi"
+  },
+  {
+    "name": "Apex",
+    "id": "apex"
+  },
+  {
+    "name": "AppleScript",
+    "id": "applescript"
+  },
+  {
+    "name": "AsciiDoc",
+    "id": "asciidoc"
+  },
+  {
+    "name": "Assembly x64",
+    "id": "asm"
+  },
+  {
+    "name": "ASP.NET Razor",
+    "id": "asp-net-razor",
+    "devicon": "dot-net-plain",
+    "aliases": ["razor"]
+  },
+  {
+    "name": "AWK",
+    "id": "awk"
+  },
+  {
+    "name": "Batchfile",
+    "id": "bat",
+    "aliases": ["batch"]
+  },
+  {
+    "name": "C",
+    "id": "c",
+    "devicon": "c-plain"
+  },
+  {
+    "name": "Clojure",
+    "id": "clojure",
+    "devicon": "clojure-line",
+    "aliases": ["clj"]
+  },
+  {
+    "name": "Cobol",
+    "id": "cobol"
+  },
+  {
+    "name": "CoffeeScript",
+    "id": "coffee",
+    "devicon": "coffeescript-original"
+  },
+  {
+    "name": "C++ Embedded Macro",
+    "id": "cpp.embedded.macro",
+    "devicon": "cplusplus-plain"
+  },
+  {
+    "name": "C++",
+    "id": "cpp",
+    "devicon": "cplusplus-plain"
+  },
+  {
+    "name": "Crystal",
+    "id": "crystal",
+    "devicon": "crystal-original"
+  },
+  {
+    "name": "C#",
+    "id": "csharp",
+    "devicon": "csharp-plain",
+    "aliases": ["c#", "cs"]
+  },
+  {
+    "name": "CSS",
+    "id": "css",
+    "devicon": "css3-plain"
+  },
+  {
+    "name": "D",
+    "id": "d"
+  },
+  {
+    "name": "Dart",
+    "id": "dart",
+    "devicon": "dart-plain"
+  },
+  {
+    "name": "Diff",
+    "id": "diff"
+  },
+  {
+    "name": "Dockerfile",
+    "id": "dockerfile",
+    "devicon": "docker-plain"
+  },
+  {
+    "name": "Elixir",
+    "id": "elixir",
+    "devicon": "elixir-plain"
+  },
+  {
+    "name": "Elm",
+    "id": "elm",
+    "devicon": "elm-plain"
+  },
+  {
+    "name": "Erlang",
+    "id": "erlang",
+    "devicon": "erlang-plain"
+  },
+  {
+    "name": "F#",
+    "id": "fsharp",
+    "devicon": "fsharp-plain",
+    "aliases": ["f#"]
+  },
+  {
+    "name": "Git Commit",
+    "id": "git-commit",
+    "devicon": "git"
+  },
+  {
+    "name": "Git Rebase",
+    "id": "git-rebase",
+    "devicon": "git"
+  },
+  {
+    "name": "GNU Plot",
+    "id": "gnuplot"
+  },
+  {
+    "name": "GDScript",
+    "id": "gdscript",
+    "aliases": ["godot", "gds", "gd"],
+    "devicon": "godot-plain"
+  },
+  {
+    "name": "Go",
+    "id": "go",
+    "devicon": "go-plain"
+  },
+  {
+    "name": "GraphQL",
+    "id": "graphql",
+    "devicon": "graphql-plain"
+  },
+  {
+    "name": "Groovy",
+    "id": "groovy",
+    "devicon": "groovy-plain"
+  },
+  {
+    "name": "Hack",
+    "id": "hack"
+  },
+  {
+    "name": "Haml",
+    "id": "haml"
+  },
+  {
+    "name": "Handlebars",
+    "id": "handlebars",
+    "devicon": "handlebars-plain",
+    "aliases": ["hbs"]
+  },
+  {
+    "name": "Haskell",
+    "id": "haskell",
+    "devicon": "haskell-plain",
+    "aliases": ["hs"]
+  },
+  {
+    "name": "HCL",
+    "id": "hcl"
+  },
+  {
+    "name": "High-Level Shading Language",
+    "id": "hlsl"
+  },
+  {
+    "name": "eRuby",
+    "id": "html-ruby-erb",
+    "aliases": ["erb"]
+  },
+  {
+    "name": "HTML",
+    "id": "html",
+    "devicon": "html5-plain"
+  },
+  {
+    "name": "HTTP",
+    "id": "http",
+    "aliases": ["rest"]
+  },
+  {
+    "name": "INI",
+    "id": "ini"
+  },
+  {
+    "name": "Java",
+    "id": "java",
+    "devicon": "java-plain"
+  },
+  {
+    "name": "JavaScript",
+    "id": "javascript",
+    "devicon": "javascript-plain",
+    "aliases": ["js", "esm", "cjs"]
+  },
+  {
+    "name": "Jinja Template",
+    "id": "jinja-html",
+    "aliases": ["jhtml"]
+  },
+  {
+    "name": "Jinja",
+    "id": "jinja",
+    "aliases": ["j2"]
+  },
+  {
+    "name": "JSON",
+    "id": "json"
+  },
+  {
+    "name": "JSON5",
+    "id": "json5"
+  },
+  {
+    "name": "JSON-C",
+    "id": "jsonc"
+  },
+  {
+    "name": "Jsonnet",
+    "id": "jsonnet"
+  },
+  {
+    "name": "JSX",
+    "id": "jsx",
+    "devicon": "react-original"
+  },
+  {
+    "name": "Julia",
+    "id": "julia",
+    "devicon": "julia-plain",
+    "aliases": ["jl"]
+  },
+  {
+    "name": "Kotlin",
+    "id": "kotlin",
+    "devicon": "kotlin-plain",
+    "aliases": ["kt", "kts"]
+  },
+  {
+    "name": "LaTeX",
+    "id": "latex",
+    "devicon": "latex-original",
+    "aliases": ["tex"]
+  },
+  {
+    "name": "Less",
+    "id": "less",
+    "devicon": "less-plain-wordmark"
+  },
+  {
+    "name": "Lisp",
+    "id": "lisp"
+  },
+  {
+    "name": "Logo",
+    "id": "logo"
+  },
+  {
+    "name": "Lua",
+    "id": "lua",
+    "devicon": "lua-plain"
+  },
+  {
+    "name": "Luau",
+    "id": "luau"
+  },
+  {
+    "name": "Makefile",
+    "id": "makefile"
+  },
+  {
+    "name": "Markdown",
+    "id": "markdown",
+    "devicon": "markdown-original",
+    "aliases": ["md"]
+  },
+  {
+    "name": "MATLAB",
+    "id": "matlab",
+    "devicon": "matlab-plain"
+  },
+  {
+    "name": "MC Function",
+    "id": "mcfunction"
+  },
+  {
+    "name": "Multidimensional Expression",
+    "id": "mdx"
+  },
+  {
+    "name": "MoonScript",
+    "id": "moonscript",
+    "aliases": ["moon"]
+  },
+  {
+    "name": "Nim",
+    "id": "nim"
+  },
+  {
+    "name": "Nimble",
+    "id": "nimble"
+  },
+  {
+    "name": "Nix",
+    "id": "nix",
+    "devicon": "nixos-plain",
+    "aliases": ["nixos"]
+  },
+  {
+    "name": "Objective C",
+    "id": "objective-c",
+    "devicon": "objectivec-plain",
+    "aliases": ["objc"]
+  },
+  {
+    "name": "OCaml",
+    "id": "ocaml",
+    "devicon": "ocaml-plain"
+  },
+  {
+    "name": "Pascal",
+    "id": "pascal",
+    "aliases": ["pas"]
+  },
+  {
+    "name": "PEG.js",
+    "id": "pegjs"
+  },
+  {
+    "name": "Perl",
+    "id": "perl",
+    "devicon": "perl-plain"
+  },
+  {
+    "name": "Raku",
+    "id": "perl6",
+    "aliases": ["raku", "p6"]
+  },
+  {
+    "name": "PHP Template",
+    "id": "php-html",
+    "devicon": "php-plain",
+    "aliases": ["phtml"]
+  },
+  {
+    "name": "PHP",
+    "id": "php",
+    "devicon": "php-plain"
+  },
+  {
+    "name": "PL/SQL",
+    "id": "pls"
+  },
+  {
+    "name": "PostCSS",
+    "id": "postcss"
+  },
+  {
+    "name": "PostgreSQL",
+    "id": "postgresql",
+    "devicon": "postgresql-plain",
+    "aliases": ["postgres"]
+  },
+  {
+    "name": "PowerShell",
+    "id": "powershell",
+    "aliases": ["ps", "ps1"]
+  },
+  {
+    "name": "Prolog",
+    "id": "prolog"
+  },
+  {
+    "name": "Protocol Buffer 3",
+    "id": "proto"
+  },
+  {
+    "name": "Pug",
+    "id": "pug",
+    "aliases": ["jade"]
+  },
+  {
+    "name": "Puppet",
+    "id": "puppet"
+  },
+  {
+    "name": "PureScript",
+    "id": "purescript",
+    "aliases": ["purs"]
+  },
+  {
+    "name": "Python",
+    "id": "python",
+    "devicon": "python-plain",
+    "aliases": ["py"]
+  },
+  {
+    "name": "R",
+    "id": "r",
+    "devicon": "r-original"
+  },
+  {
+    "name": "ASP.NET Razor",
+    "id": "razor",
+    "devicon": "dot-net-plain",
+    "aliases": ["cshtml"]
+  },
+  {
+    "name": "Ruby",
+    "id": "ruby",
+    "devicon": "ruby-plain",
+    "aliases": ["rb"]
+  },
+  {
+    "name": "Rust",
+    "id": "rust",
+    "devicon": "rust-plain",
+    "aliases": ["rs"]
+  },
+  {
+    "name": "SAS",
+    "id": "sas"
+  },
+  {
+    "name": "Sass",
+    "id": "sass",
+    "devicon": "sass-original"
+  },
+  {
+    "name": "Scala",
+    "id": "scala",
+    "devicon": "scala-plain"
+  },
+  {
+    "name": "Scheme",
+    "id": "scheme"
+  },
+  {
+    "name": "SCSS",
+    "id": "scss",
+    "devicon": "sass-original"
+  },
+  {
+    "name": "ShaderLab",
+    "id": "shaderlab",
+    "aliases": ["shader"]
+  },
+  {
+    "name": "Shell",
+    "id": "shellscript",
+    "devicon": "bash-plain",
+    "aliases": ["shell", "bash", "sh", "zsh"]
+  },
+  {
+    "name": "Smalltalk",
+    "id": "smalltalk"
+  },
+  {
+    "name": "SourcePawn",
+    "id": "sp"
+  },
+  {
+    "name": "SQL",
+    "id": "sql",
+    "devicon": "mysql-plain"
+  },
+  {
+    "name": "SSH Config",
+    "id": "ssh-config"
+  },
+  {
+    "name": "Stylus",
+    "id": "stylus",
+    "devicon": "stylus-original",
+    "aliases": ["styl"]
+  },
+  {
+    "name": "Swift",
+    "id": "swift",
+    "devicon": "swift-plain"
+  },
+  {
+    "name": "Tcl",
+    "id": "tcl"
+  },
+  {
+    "name": "TOML",
+    "id": "toml"
+  },
+  {
+    "name": "TypeScript Doc",
+    "id": "ts-doc",
+    "devicon": "typescript-plain"
+  },
+  {
+    "name": "TSX",
+    "id": "tsx",
+    "devicon": "react-original"
+  },
+  {
+    "name": "TypeScript",
+    "id": "typescript",
+    "devicon": "typescript-plain",
+    "aliases": ["ts"]
+  },
+  {
+    "name": "VHDL",
+    "id": "vhdl"
+  },
+  {
+    "name": "Visual Basic .NET",
+    "id": "vb",
+    "devicon": "dot-net-plain",
+    "aliases": ["cmd"]
+  },
+  {
+    "name": "VimL",
+    "id": "viml",
+    "devicon": "vim-plain",
+    "aliases": ["vim"]
+  },
+  {
+    "name": "Vue HTML",
+    "id": "vue-html",
+    "devicon": "vuejs-plain"
+  },
+  {
+    "name": "Vue",
+    "id": "vue",
+    "devicon": "vuejs-plain"
+  },
+  {
+    "name": "WebAssembly",
+    "id": "wasm",
+    "aliases": ["wat"]
+  },
+  {
+    "name": "XML",
+    "id": "xml"
+  },
+  {
+    "name": "XSL",
+    "id": "xsl"
+  },
+  {
+    "name": "YAML",
+    "id": "yaml",
+    "aliases": ["yml"]
+  },
+  {
+    "name": "Wenyan",
+    "id": "文言",
+    "aliases": ["wenyan"]
+  }
+]

@@ -1,0 +1,20 @@
+ .better-codeblocks .hljs{display:block;overflow-x:auto;padding:1em}.better-codeblocks .hljs{padding:3px 5px}/*!
+   Theme: Agate
+   Author: (c) Taufik Nurrohman <hi@taufik-nurrohman.com>
+   Maintainer: @taufik-nurrohman
+   Updated: 2021-04-24
+
+   #333
+   #62c8f3
+   #7bd694
+   #888
+   #a2fca2
+   #ade5fc
+   #b8d8a2
+   #c6b4f0
+   #d36363
+   #fc9b9b
+   #fcc28c
+   #ffa
+   #fff
+*/.better-codeblocks .hljs{background:#333;color:#fff}.better-codeblocks .hljs-doctag,.better-codeblocks .hljs-meta-keyword,.better-codeblocks .hljs-name,.better-codeblocks .hljs-strong{font-weight:700}.better-codeblocks .hljs-,.better-codeblocks .hljs-emphasis{font-style:italic}.better-codeblocks .hljs-section,.better-codeblocks .hljs-tag{color:#62c8f3}.better-codeblocks .hljs-selector-class,.better-codeblocks .hljs-selector-id,.better-codeblocks .hljs-template-variable,.better-codeblocks .hljs-variable{color:#ade5fc}.better-codeblocks .hljs-meta-string,.better-codeblocks .hljs-string{color:#a2fca2}.better-codeblocks .hljs-attr,.better-codeblocks .hljs-quote,.better-codeblocks .hljs-selector-attr{color:#7bd694}.better-codeblocks .hljs-tag .better-codeblocks .hljs-attr{color:inherit}.better-codeblocks .hljs-attribute,.better-codeblocks .hljs-title,.better-codeblocks .hljs-type{color:#ffa}.better-codeblocks .hljs-number,.better-codeblocks .hljs-symbol{color:#d36363}.better-codeblocks .hljs-bullet,.better-codeblocks .hljs-template-tag{color:#b8d8a2}.better-codeblocks .hljs-built_in,.better-codeblocks .hljs-keyword,.better-codeblocks .hljs-literal,.better-codeblocks .hljs-selector-tag{color:#fcc28c}.better-codeblocks .hljs-,.better-codeblocks .hljs-comment,.better-codeblocks .hljs-formula{color:#888}.better-codeblocks .hljs-link,.better-codeblocks .hljs-regexp,.better-codeblocks .hljs-selector-pseudo{color:#c6b4f0}.better-codeblocks .hljs-meta{color:#fc9b9b}.better-codeblocks .hljs-deletion{background:#fc9b9b;color:#333}.better-codeblocks .hljs-addition{background:#a2fca2;color:#333}.better-codeblocks .hljs-subst{color:#fff}.better-codeblocks .hljs a{color:inherit}.better-codeblocks .hljs a:focus,.better-codeblocks .hljs a:hover{color:inherit;text-decoration:underline}.better-codeblocks .hljs mark{background:#555;color:inherit}

@@ -1,0 +1,10 @@
+ .better-codeblocks .hljs{display:block;overflow-x:auto;padding:1em}.better-codeblocks .hljs{padding:3px 5px}/*!
+  Theme: GitHub Dark
+  Description: Dark theme as seen on github.com
+  Author: github.com
+  Maintainer: @Hirse
+  Updated: 2021-05-15
+
+  Outdated base version: https://github.com/primer/github-syntax-dark
+  Current colors taken from GitHub's CSS
+*/.better-codeblocks .hljs{color:#c9d1d9;background:#0d1117}.better-codeblocks .hljs-doctag,.better-codeblocks .hljs-keyword,.better-codeblocks .hljs-meta .better-codeblocks .hljs-keyword,.better-codeblocks .hljs-template-tag,.better-codeblocks .hljs-template-variable,.better-codeblocks .hljs-type,.better-codeblocks .hljs-variable.language_{color:#ff7b72}.better-codeblocks .hljs-title,.better-codeblocks .hljs-title.class_,.better-codeblocks .hljs-title.class_.inherited__,.better-codeblocks .hljs-title.function_{color:#d2a8ff}.better-codeblocks .hljs-attr,.better-codeblocks .hljs-attribute,.better-codeblocks .hljs-literal,.better-codeblocks .hljs-meta,.better-codeblocks .hljs-number,.better-codeblocks .hljs-operator,.better-codeblocks .hljs-selector-attr,.better-codeblocks .hljs-selector-class,.better-codeblocks .hljs-selector-id,.better-codeblocks .hljs-variable{color:#79c0ff}.better-codeblocks .hljs-meta .better-codeblocks .hljs-string,.better-codeblocks .hljs-regexp,.better-codeblocks .hljs-string{color:#a5d6ff}.better-codeblocks .hljs-built_in,.better-codeblocks .hljs-symbol{color:#ffa657}.better-codeblocks .hljs-,.better-codeblocks .hljs-comment,.better-codeblocks .hljs-formula{color:#8b949e}.better-codeblocks .hljs-name,.better-codeblocks .hljs-quote,.better-codeblocks .hljs-selector-pseudo,.better-codeblocks .hljs-selector-tag{color:#7ee787}.better-codeblocks .hljs-subst{color:#c9d1d9}.better-codeblocks .hljs-section{color:#1f6feb;font-weight:700}.better-codeblocks .hljs-bullet{color:#f2cc60}.better-codeblocks .hljs-emphasis{color:#c9d1d9;font-style:italic}.better-codeblocks .hljs-strong{color:#c9d1d9;font-weight:700}.better-codeblocks .hljs-addition{color:#aff5b4;background-color:#033a16}.better-codeblocks .hljs-deletion{color:#ffdcd7;background-color:#67060c}
