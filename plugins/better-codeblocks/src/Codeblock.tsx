@@ -17,7 +17,7 @@ export interface Highlighter {
 }
 const { highlight } = hljs as Highlighter;
 
-const mod = await webpack.waitForModule(
+const mod = await webpack.waitForModule<Record<string, unknown>>(
   webpack.filters.bySource(
     'document.queryCommandEnabled("copy")||document.queryCommandSupported("copy")',
   ),

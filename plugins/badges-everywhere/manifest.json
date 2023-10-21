@@ -7,7 +7,7 @@
     "discordID": "499400512559382538",
     "github": "12944qwerty"
   },
-  "version": "1.2.3",
+  "version": "1.2.4",
   "updater": {
     "type": "store",
     "id": "dev.kingfish.BadgesEverywhere"
@@ -15,6 +15,6 @@
   "license": "MIT",
   "type": "replugged-plugin",
   "renderer": "src/index.ts",
-  "source": "https://github.com/qwerty-mods/badges-everywhere",
-  "image": "https://cdn.discordapp.com/attachments/1054976610782162974/1054976610891210794/image.png"
+  "source": "https://github.com/12944qwerty/replugged-plugins/tree/main/plugins/badges-everywhere",
+  "image": "https://raw.githubusercontent.com/12944qwerty/replugged-plugins/main/plugins/badges-everywhere/assets/users.png"
 }

@@ -7,7 +7,7 @@
     "discordID": "499400512559382538",
     "github": "12944qwerty"
   },
-  "version": "1.0.1",
+  "version": "1.0.2",
   "updater": {
     "type": "store",
     "id": "dev.kingfish.MoreInvites"
@@ -15,6 +15,6 @@
   "license": "MIT",
   "type": "replugged-plugin",
   "renderer": "src/index.ts",
-  "source": "https://github.com/12944qwerty/replugged-plugins",
-  "image": "https://cdn.discordapp.com/attachments/1132527213401612289/1132527222872346654/Screenshot_2023-07-22_at_11.png"
+  "source": "https://github.com/12944qwerty/replugged-plugins/tree/main/plugins/more-invites",
+  "image": "https://raw.githubusercontent.com/12944qwerty/replugged-plugins/main/plugins/more-invites/assets/dscgg.png"
 }

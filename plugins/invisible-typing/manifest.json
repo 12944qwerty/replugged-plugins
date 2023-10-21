@@ -7,7 +7,7 @@
     "discordID": "499400512559382538",
     "github": "12944qwerty"
   },
-  "version": "1.0.4",
+  "version": "1.0.5",
   "updater": {
     "type": "store",
     "id": "dev.kingfish.InvisibleTyping"
@@ -16,6 +16,6 @@
   "type": "replugged-plugin",
   "renderer": "src/index.ts",
   "plaintextPatches": "src/plaintextPatches.ts",
-  "source": "https://github.com/qwerty-mods/invisible-typing",
-  "image": "https://cdn.discordapp.com/attachments/1132527213401612289/1133853437319188641/invistyping.gif"
+  "source": "https://github.com/12944qwerty/replugged-plugins/tree/main/plugins/invisible-typing",
+  "image": "https://raw.githubusercontent.com/12944qwerty/replugged-plugins/main/plugins/invisible-typing/assets/invistyping.gif"
 }

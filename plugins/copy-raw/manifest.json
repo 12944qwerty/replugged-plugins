@@ -7,7 +7,7 @@
     "discordID": "499400512559382538",
     "github": "12944qwerty"
   },
-  "version": "1.1.0",
+  "version": "1.1.1",
   "updater": {
     "type": "store",
     "id": "dev.kingfish.CopyRaw"
@@ -15,6 +15,6 @@
   "license": "MIT",
   "type": "replugged-plugin",
   "renderer": "src/index.ts",
-  "source": "https://github.com/qwerty-mods/copy-raw",
-  "image": "https://cdn.discordapp.com/attachments/1132527213401612289/1133840333504008252/Screen_Recording_2023-07-26_at_2.14.59_PM.gif"
+  "source": "https://github.com/12944qwerty/replugged-plugins/tree/main/plugins/copy-raw",
+  "image": "https://raw.githubusercontent.com/12944qwerty/replugged-plugins/main/plugins/copy-raw/assets/copyraw.gif"
 }
