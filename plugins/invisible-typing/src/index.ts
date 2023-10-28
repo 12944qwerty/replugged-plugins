@@ -39,7 +39,7 @@ export async function start(): Promise<void> {
   const mod = await webpack.waitForModule<{
     type: (args: { type: { analyticsName: string } }) => React.ReactElement;
   }>(webpack.filters.bySource("ChannelTextAreaButtons"));
-  inject.after(mod, "type", ([ args ], res) => {
+  inject.after(mod, "type", ([args], res) => {
     res.props.children.splice(1, 0, React.createElement(Icon, { type: args.type }));
 
     return res;

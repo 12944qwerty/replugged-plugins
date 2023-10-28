@@ -78,11 +78,12 @@ export async function start(): Promise<void> {
       }
     }
 
-    const tree = findInReactTree(res as unknown as Tree, (e) => e && Array.isArray(e) && e[0] && e[0].key === "role-icon-children") as unknown as React.ReactElement[] | undefined;
+    const tree = findInReactTree(
+      res as unknown as Tree,
+      (e) => e && Array.isArray(e) && e[0] && e[0].key === "role-icon-children",
+    ) as unknown as React.ReactElement[] | undefined;
     if (tree) {
-      tree.push(
-        React.createElement(Badges, { user: getUserProfile(author.id) }),
-      );
+      tree.push(React.createElement(Badges, { user: getUserProfile(author.id) }));
     }
 
     return res;
