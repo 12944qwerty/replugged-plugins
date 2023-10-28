@@ -4,7 +4,8 @@ import { cfg } from ".";
 
 const { React, channels } = common;
 
-export const Icon = ({ type }: { type?: { analyticsName?: string } }) => {
+export const Icon = (props: { type?: { analyticsName: string } }) => {
+  const { type } = props;
   if (
     (type?.analyticsName !== "normal" && type?.analyticsName !== "sidebar") ||
     !cfg.get("button", true)
@@ -18,7 +19,7 @@ export const Icon = ({ type }: { type?: { analyticsName?: string } }) => {
   const [enabled, setEnabled] = React.useState(
     channelWise ? channelsList[channelId] : globalInvisible,
   );
-  return (
+  return <>
     <div key={`${enabled}`}>
       <components.Tooltip text={!enabled ? "Disable Typing" : "Enable Typing"}>
         <components.Clickable
@@ -52,5 +53,5 @@ export const Icon = ({ type }: { type?: { analyticsName?: string } }) => {
         </components.Clickable>
       </components.Tooltip>
     </div>
-  );
+  </>;
 };

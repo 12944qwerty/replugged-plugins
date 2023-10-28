@@ -1,11 +1,12 @@
-import { Injector, settings, webpack } from "replugged";
-
+import { Injector, common, settings, webpack } from "replugged";
 import "./style.css";
 
 const inject = new Injector();
 
 export { Settings } from "./Settings";
-export { Icon } from "./Icon";
+import { Icon } from "./Icon";
+
+const { React } = common;
 
 export interface SettingsType {
   button?: boolean;
@@ -34,6 +35,15 @@ export async function start(): Promise<void> {
       }
     },
   );
+
+  const mod = await webpack.waitForModule<{
+    type: (args: { type: { analyticsName: string } }) => React.ReactElement;
+  }>(webpack.filters.bySource("ChannelTextAreaButtons"));
+  inject.after(mod, "type", ([ args ], res) => {
+    res.props.children.splice(1, 0, React.createElement(Icon, { type: args.type }));
+
+    return res;
+  });
 }
 
 export function stop(): void {

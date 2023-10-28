@@ -1,5 +1,6 @@
 import { Injector, common, settings, webpack } from "replugged";
 import { Channel, Message, User } from "discord-types/general";
+import { type Tree, findInReactTree } from "replugged/util";
 const { React } = common;
 
 import "./style.css";
@@ -56,17 +57,17 @@ export async function start(): Promise<void> {
   const Badges = badges(getImageUrl);
 
   const mod = await webpack.waitForModule<{
-    Z: (
+    default: (
       ...args: Array<{
         decorations: React.ReactElement[][];
         message: Message;
         author: User;
         channel: Channel;
       }>
-    ) => unknown;
+    ) => React.ReactElement;
   }>(webpack.filters.bySource('"BADGES"'));
 
-  injector.after(mod, "Z", ([args], res: React.ReactElement) => {
+  injector.after(mod, "default", ([args], res) => {
     const { author } = args.message;
     const userProfile = getUserProfile(author.id);
     if (!cfg.get("avoidrates", true) && !userProfile && !isFetchingProfile(author.id)) {
@@ -76,11 +77,13 @@ export async function start(): Promise<void> {
         return res;
       }
     }
-    res.props?.children[3]?.props?.children?.splice(
-      1,
-      0,
-      React.createElement(Badges, { user: getUserProfile(author.id) }),
-    );
+
+    const tree = findInReactTree(res as unknown as Tree, (e) => e && Array.isArray(e) && e[0] && e[0].key === "role-icon-children") as unknown as React.ReactElement[] | undefined;
+    if (tree) {
+      tree.push(
+        React.createElement(Badges, { user: getUserProfile(author.id) }),
+      );
+    }
 
     return res;
   });

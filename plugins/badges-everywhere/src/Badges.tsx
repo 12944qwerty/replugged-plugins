@@ -2,7 +2,9 @@ import { components, webpack } from "replugged";
 import { User } from "discord-types/general";
 import { SettingsType, badge, cfg, profile } from ".";
 
+// @ts-expect-error shut up
 const { profileBadge24 } = await webpack.waitForProps("profileBadge24")!;
+// @ts-expect-error shut up
 const { anchor, anchorUnderlineOnHover } = await webpack.waitForProps(
   "anchor",
   "anchorUnderlineOnHover",
@@ -22,7 +24,6 @@ const BadgeSettingMapping: Record<string, keyof SettingsType> = {
   guild_booster_lvl: "premium",
   bot_commands: "bot",
 };
-/* eslint-enable camelcase */
 
 export function badge(badge: badge): JSX.Element {
   if (badge.link) {

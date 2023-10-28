@@ -20,11 +20,11 @@ const cache: Record<
 > = {};
 
 async function getCode(code: string): Promise<string | undefined> {
-  if (!cache[code].fetching) {
+  if (code in cache && !cache[code].fetching) {
     return cache[code].code;
   }
 
-  if (!cache[code].fetching) {
+  if (!(code in cache) || !cache[code].fetching) {
     cache[code] = {
       fetching: true,
     };
