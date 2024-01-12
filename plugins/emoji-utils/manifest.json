@@ -1,0 +1,20 @@
+{
+  "id": "dev.kingfish.EmojiUtils",
+  "name": "Emoji Utils",
+  "description": "Various emoji utilities",
+  "author": {
+    "name": "King Fish",
+    "discordID": "499400512559382538",
+    "github": "12944qwerty"
+  },
+  "version": "1.0.0",
+  "updater": {
+    "type": "store",
+    "id": "dev.kingfish.EmojiUtils"
+  },
+  "license": "MIT",
+  "type": "replugged-plugin",
+  "renderer": "src/index.tsx",
+  "source": "https://github.com/12944qwerty/replugged-plugins/tree/main/plugins/emoji-utils",
+  "image": "https://raw.githubusercontent.com/12944qwerty/replugged-plugins/main/plugins/emoji-utils/assets/icon.png"
+}
