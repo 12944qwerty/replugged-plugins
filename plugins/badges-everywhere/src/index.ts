@@ -77,9 +77,13 @@ export async function start(): Promise<void> {
         return res;
       }
     }
-    
+
     if (res.props.children) {
-      res.props.children.splice(4, 0, React.createElement(Badges, { user: getUserProfile(author.id) }));
+      res.props.children.splice(
+        4,
+        0,
+        React.createElement(Badges, { user: getUserProfile(author.id) }),
+      );
     }
 
     return res;
