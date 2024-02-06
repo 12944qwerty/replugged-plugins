@@ -56,7 +56,7 @@ export default function Badges(getImageUrl: (id: string) => string) {
   return (props: { user?: profile }): JSX.Element | null => {
     let { user } = props;
 
-    if (user) {
+    if (user && user.badges) {
       let badges = user.badges
         .map((badge) => {
           badge.src = getImageUrl(badge.icon);

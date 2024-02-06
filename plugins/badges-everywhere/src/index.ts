@@ -1,6 +1,5 @@
 import { Injector, common, settings, webpack } from "replugged";
 import { Channel, Message, User } from "discord-types/general";
-import { type Tree, findInReactTree } from "replugged/util";
 const { React } = common;
 
 import "./style.css";
@@ -35,7 +34,7 @@ export interface badge {
 export type profile = {
   premiumSince: string;
   premiumGuildSince: string;
-  badges: badge[];
+  badges?: badge[];
 } & Record<string, string>;
 
 export async function start(): Promise<void> {
