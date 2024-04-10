@@ -15,5 +15,6 @@
   "license": "MIT",
   "type": "replugged-plugin",
   "renderer": "src/index.ts",
-  "source": "https://github.com/12944qwerty/replugged-plugins/tree/main/plugins/reveal-all-spoilers"
+  "source": "https://github.com/12944qwerty/replugged-plugins/tree/main/plugins/reveal-all-spoilers",
+  "image": "https://raw.githubusercontent.com/12944qwerty/replugged-plugins/main/plugins/reveal-all-spoilers/assets/reveal.gif"
 }
