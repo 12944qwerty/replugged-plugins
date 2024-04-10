@@ -23,8 +23,6 @@ export async function start(): Promise<void> {
   inject.after(ChannelComp, "default", ([{ channel }], res) => {
     if (!channel.nsfw) return;
 
-    console.log("ChannelComp", res);
-
     const badge = findInReactTree(
       res as unknown as Tree,
       (r) => Boolean(r?.className) && (r?.className as string).includes("linkTop"),
