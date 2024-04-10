@@ -18,7 +18,7 @@ interface Spoiler {
 export async function start(): Promise<void> {
   const Spoiler = await waitForModule<Spoiler>(filters.bySource("renderObscuredText"));
 
-  inject.before(Spoiler.default.prototype, "renderWithTooltip", ([ args ]) => {
+  inject.before(Spoiler.default.prototype, "renderWithTooltip", ([args]) => {
     const orig = args.props.children;
     args.props.children = (r: unknown) => {
       const res = orig(r);
