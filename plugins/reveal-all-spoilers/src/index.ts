@@ -31,7 +31,7 @@ export async function start(): Promise<void> {
           const { target } = e;
           if (!target) return;
           (target as HTMLElement).parentNode
-            ?.querySelectorAll(".spoilerContent__383f3")
+            ?.querySelectorAll("[class^='spoilerContent']")
             .forEach((e) => (e as HTMLElement).click());
         }
         onClick(e);
