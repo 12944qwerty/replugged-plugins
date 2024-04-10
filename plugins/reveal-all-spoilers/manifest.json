@@ -1,0 +1,19 @@
+{
+  "id": "dev.kingfish.RevealAllSpoilers",
+  "name": "Reveal All Spoilers",
+  "description": "Reveals all spoilers on a message with ctrl+click",
+  "author": {
+    "name": "King Fish",
+    "discordID": "499400512559382538",
+    "github": "12944qwerty"
+  },
+  "version": "1.0.0",
+  "updater": {
+    "type": "store",
+    "id": "dev.kingfish.RevealAllSpoilers"
+  },
+  "license": "MIT",
+  "type": "replugged-plugin",
+  "renderer": "src/index.ts",
+  "source": "https://github.com/12944qwerty/replugged-plugins/tree/main/plugins/reveal-all-spoilers"
+}
