@@ -12,7 +12,7 @@ export interface SettingsType {
   button?: boolean;
   invisible?: boolean;
   channelWise?: boolean;
-  channels?: Record<string, boolean>;
+  channels?: Record<string, boolean | undefined>;
 }
 export const cfg = await settings.init<SettingsType>("dev.kingfish.InvisibleTyping");
 
@@ -28,7 +28,7 @@ export async function start(): Promise<void> {
       const globalInvisible = cfg.get("invisible", true);
       const channelWise = cfg.get("button", true) ? cfg.get("channelWise", true) : false;
       const channels = cfg.get("channels", { [channelId]: globalInvisible });
-      if (channelWise ? channels[channelId] : globalInvisible) {
+      if (channelWise ? channels[channelId] ?? globalInvisible : globalInvisible) {
         return null;
       } else {
         return original(channelId);

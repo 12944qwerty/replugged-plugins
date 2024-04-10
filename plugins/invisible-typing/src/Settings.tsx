@@ -16,7 +16,7 @@ export function Settings(): React.ReactElement {
       </SwitchItem>
       <SwitchItem
         {...util.useSetting(cfg, "invisible", true)}
-        note="When enabled, invisibility applies to all channels. When disabled, invisibility is channel based.">
+        note="Whether invisibility applies to all channels. (Serves as default for channel's state when invisiblity is channel based)">
         Enable Global Invisible Typing
       </SwitchItem>
     </>
