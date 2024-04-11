@@ -38,7 +38,7 @@ export async function start(): Promise<void> {
 
   const mod = await webpack.waitForModule<{
     type: (args: { type: { analyticsName: string } }) => React.ReactElement | null;
-  }>(webpack.filters.bySource("ChannelTextAreaButtons"));
+  }>(webpack.filters.bySource("default.getSentUserIds()"));
   inject.after(mod, "type", ([args], res) => {
     if (res) {
       res.props.children.splice(1, 0, React.createElement(Icon, { type: args.type }));
