@@ -43,6 +43,9 @@ export function Settings(): React.ReactElement {
         <SwitchItem {...util.useSetting(cfg, "bot", true)} note="Includes slash command badge.">
           Display Bot badges
         </SwitchItem>
+        <SwitchItem {...util.useSetting(cfg, "quest", true)}>
+          Display Quest badges
+        </SwitchItem>
       </Category>
     </>
   );

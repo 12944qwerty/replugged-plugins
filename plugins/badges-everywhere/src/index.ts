@@ -24,6 +24,7 @@ export interface SettingsType {
   bot?: boolean;
   premium?: boolean;
   avoidrates?: boolean;
+  quest?: boolean;
 }
 export const cfg = await settings.init<SettingsType>("dev.kingfish.BadgesEverywhere");
 

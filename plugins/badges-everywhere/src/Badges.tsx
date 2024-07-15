@@ -24,6 +24,7 @@ const BadgeSettingMapping: Record<string, keyof SettingsType> = {
   premium: "premium",
   guild_booster_lvl: "premium",
   bot_commands: "bot",
+  quest_completed: "quest",
 };
 
 export function Badge(badge: Badge): React.ReactElement {
