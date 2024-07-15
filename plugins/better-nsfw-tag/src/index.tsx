@@ -1,12 +1,14 @@
-import { Injector } from "replugged";
-import { filters, waitForModule, waitForProps } from "replugged/webpack";
+import type { Channel } from "discord-types/general";
+import type React from "react";
+import { Injector, Logger } from "replugged";
 import { Tree, findInReactTree } from "replugged/util";
-import { Channel } from "discord-types/general";
+import { filters, getFunctionKeyBySource, waitForModule, waitForProps } from "replugged/webpack";
 
 const inject = new Injector();
+const logger = Logger.plugin("BetterNSFWTag");
 
-interface ChannelComp {
-  default: (args: { channel: Channel }) => React.ReactElement;
+interface ChannelItemModule {
+  default: React.FC<{ channel: Channel }>;
 }
 
 interface TextBadgeProps {
@@ -15,12 +17,19 @@ interface TextBadgeProps {
 }
 
 export async function start(): Promise<void> {
-  const ChannelComp = await waitForModule<ChannelComp>(filters.bySource(".unreadImportant:"));
+  const mod = await waitForModule<ChannelItemModule>(filters.bySource(".unreadImportant:"));
+  const key = getFunctionKeyBySource(mod, ".unreadImportant:");
+
+  if (!key) {
+    logger.error("Couldn't find the correct module to inject into.");
+    return;
+  }
+
   const { TextBadge } = await waitForProps<{
-    TextBadge: React.FunctionComponent<TextBadgeProps>;
+    TextBadge: React.FC<TextBadgeProps>;
   }>("TextBadge");
 
-  inject.after(ChannelComp, "default", ([{ channel }], res) => {
+  inject.after(mod, key, ([{ channel }], res) => {
     if (!channel.nsfw) return;
 
     const badge = findInReactTree(

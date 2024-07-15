@@ -1,14 +1,21 @@
-import { Guild } from "discord-types/general";
-import { Injector, Logger, common, components, types, webpack } from "replugged";
 import { Buffer } from "buffer/";
+import type { Guild } from "discord-types/general";
+import { Injector, Logger, common, components, types, webpack } from "replugged";
+
 const {
   ContextMenu: { MenuItem, MenuGroup },
 } = components;
 const { flux, guilds, toast } = common;
 const { ContextMenuTypes } = types;
 
-const logger = Logger.plugin("Emoji Utils");
 const injector = new Injector();
+const logger = Logger.plugin("EmojiUtils");
+
+declare class PermissionStore extends flux.Store {
+  public getGuildPermissionProps: (guild: Guild) => {
+    canManageGuildExpressions: boolean;
+  };
+}
 
 async function getImageData(url: string): Promise<string> {
   const req = await fetch(url);
@@ -23,21 +30,14 @@ export async function start(): Promise<void> {
     ),
   );
 
-  const Clipboard: {
-    SUPPORTED: boolean;
-    copy: (content: string) => unknown;
-  } = {
-    copy: Object.values(mod).find((e) => typeof e === "function") as (args: string) => void,
+  const Clipboard = {
+    copy: Object.values(mod).find((e) => typeof e === "function") as (
+      content: string,
+    ) => boolean | void,
     SUPPORTED: Object.values(mod).find((e) => typeof e === "boolean") as boolean,
   };
 
-  const PermissionsStore = webpack.getByStoreName(
-    "PermissionStore",
-  ) as unknown as typeof flux.Store & {
-    getGuildPermissionProps: (guild: Guild) => {
-      canManageGuildExpressions: boolean;
-    };
-  };
+  const PermissionStore = webpack.getByStoreName<PermissionStore>("PermissionStore")!;
 
   const { uploadEmoji } = await webpack.waitForProps<{
     uploadEmoji: (args: {
@@ -55,7 +55,7 @@ export async function start(): Promise<void> {
           <MenuItem id="emoji-utils-clone" label="Steal Emoji">
             {Object.values(guilds.getGuilds())
               .map((guild) => {
-                if (PermissionsStore.getGuildPermissionProps(guild).canManageGuildExpressions)
+                if (PermissionStore.getGuildPermissionProps(guild).canManageGuildExpressions)
                   return (
                     <MenuItem
                       id={`emoji-utils-clone-server${guild.id}`}
@@ -67,7 +67,7 @@ export async function start(): Promise<void> {
                           );
                           if (!matches) {
                             // Should never happen theoretically
-                            logger.error("Failed to steal emoji: Cannot find name of emoji");
+                            logger.error("Failed to steal emoji: cannot find name of emoji");
                             toast.toast("Failed to steal emoji", toast.Kind.FAILURE);
                             return;
                           }

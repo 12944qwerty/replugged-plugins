@@ -37,7 +37,7 @@ export function Settings(): React.ReactElement {
   return (
     <>
       <ErrorBoundary>
-        <Codeblock lang={previews[previewID].lang} code={previews[previewID].code}></Codeblock>
+        <Codeblock lang={previews[previewID].lang} code={previews[previewID].code} />
       </ErrorBoundary>
       <br />
       <SelectItem

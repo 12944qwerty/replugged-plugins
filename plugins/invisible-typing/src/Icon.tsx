@@ -3,6 +3,7 @@ import { common, components } from "replugged";
 import { cfg } from ".";
 
 const { React, channels } = common;
+const { Clickable, Tooltip } = components;
 
 export const Icon = (props: { type?: { analyticsName: string } }) => {
   const { type } = props;
@@ -17,12 +18,12 @@ export const Icon = (props: { type?: { analyticsName: string } }) => {
   const channelWise = cfg.get("button", true) ? cfg.get("channelWise", true) : false;
   const channelsList = cfg.get("channels", { [channelId]: globalInvisible });
   const [enabled, setEnabled] = React.useState(
-    channelWise ? channelsList[channelId] ?? globalInvisible : globalInvisible,
+    channelWise ? (channelsList[channelId] ?? globalInvisible) : globalInvisible,
   );
   return (
     <div key={`${enabled}`}>
-      <components.Tooltip text={!enabled ? "Disable Typing" : "Enable Typing"}>
-        <components.Clickable
+      <Tooltip text={!enabled ? "Disable Typing" : "Enable Typing"}>
+        <Clickable
           style={{ marginTop: 5 }}
           onClick={() => {
             if (channelWise) {
@@ -50,8 +51,8 @@ export const Icon = (props: { type?: { analyticsName: string } }) => {
               />
             </svg>
           </button>
-        </components.Clickable>
-      </components.Tooltip>
+        </Clickable>
+      </Tooltip>
     </div>
   );
 };

@@ -1,6 +1,8 @@
-import { Injector, common, settings, webpack } from "replugged";
-import { Channel, Message, User } from "discord-types/general";
-const { React } = common;
+import type { Channel, Message, User } from "discord-types/general";
+import { Injector, Logger, common, settings, webpack } from "replugged";
+import type { Badge as APIBadge } from "replugged/types";
+
+const { React, flux } = common;
 
 import "./style.css";
 
@@ -8,6 +10,7 @@ import badges from "./Badges";
 export { Settings } from "./Settings";
 
 const injector = new Injector();
+const logger = Logger.plugin("BadgesEverywhere");
 
 export interface SettingsType {
   legacyUsername?: boolean;
@@ -24,28 +27,28 @@ export interface SettingsType {
 }
 export const cfg = await settings.init<SettingsType>("dev.kingfish.BadgesEverywhere");
 
-export interface badge {
-  description: string;
-  icon: string;
-  id: string;
-  link: string;
-  src?: string;
+export interface Badge extends APIBadge {
+  src: string;
 }
-export type profile = {
-  premiumSince: string;
-  premiumGuildSince: string;
-  badges?: badge[];
+
+export type UserProfile = {
+  premiumSince: Date | null;
+  premiumGuildSince: Date | null;
+  badges?: Badge[];
 } & Record<string, string>;
 
-export async function start(): Promise<void> {
-  const { getUserProfile, isFetchingProfile } = await webpack.waitForModule<
-    Record<string, (id: string) => profile | undefined>
-  >(webpack.filters.byProps("getUserProfile"));
+declare class UserProfileStore extends flux.Store {
+  public isFetchingProfile: (userId: string) => boolean;
+  public getUserProfile: (userId: string) => UserProfile | undefined;
+}
 
-  const getImageUrl: (id: string) => string = webpack.getFunctionBySource<(id: string) => string>(
+export async function start(): Promise<void> {
+  const UserProfileStore = webpack.getByStoreName<UserProfileStore>("UserProfileStore")!;
+
+  const getImageUrl = webpack.getFunctionBySource<(id: string) => string>(
     await webpack.waitForModule(webpack.filters.bySource("BADGE_ICON(")),
     "BADGE_ICON(",
-  ) as (id: string) => string;
+  )!;
 
   const fetchUser = webpack.getFunctionBySource<(id: string) => unknown>(
     await webpack.waitForModule(webpack.filters.bySource('"USER_PROFILE_FETCH_START"')),
@@ -65,11 +68,21 @@ export async function start(): Promise<void> {
       }>
     ) => React.ReactElement;
   }>(webpack.filters.bySource('"BADGES"'));
+  const key = webpack.getFunctionKeyBySource(mod, "decorations");
 
-  injector.after(mod, "default", ([args], res) => {
+  if (!key) {
+    logger.error("Couldn't find the correct module to inject into.");
+    return;
+  }
+
+  injector.after(mod, key, ([args], res) => {
     const { author } = args.message;
-    const userProfile = getUserProfile(author.id);
-    if (!cfg.get("avoidrates", true) && !userProfile && !isFetchingProfile(author.id)) {
+    const userProfile = UserProfileStore.getUserProfile(author.id);
+    if (
+      !cfg.get("avoidrates", true) &&
+      !userProfile &&
+      !UserProfileStore.isFetchingProfile(author.id)
+    ) {
       if (fetchUser) {
         fetchUser(author.id);
       } else {
@@ -81,7 +94,7 @@ export async function start(): Promise<void> {
       res.props.children.splice(
         4,
         0,
-        React.createElement(Badges, { user: getUserProfile(author.id) }),
+        React.createElement(Badges, { user: UserProfileStore.getUserProfile(author.id) }),
       );
     }
 
