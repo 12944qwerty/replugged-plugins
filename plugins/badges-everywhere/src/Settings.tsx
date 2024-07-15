@@ -1,3 +1,4 @@
+import type React from "react";
 import { components, util } from "replugged";
 import { cfg } from ".";
 
@@ -7,41 +8,42 @@ export function Settings(): React.ReactElement {
   return (
     <>
       <FormNotice
-        title="Avoid Ratelimits"
-        body="If disabled, you may be ratelimited. Due to the nature of discord's method of fetching badges (apis), users may not have their badges displayed until you click their profile. By disabling this setting, you bypass this and immediately fetch all badges needed to display on screen. This can be prone to ratelimits."
+        title="Avoid rate limits"
+        body="If disabled, you may be rate limited. Due to the nature of Discord's method of fetching badges (API), users may not have their badges displayed until you click their profile. By disabling this setting, you bypass this and immediately fetch all badges needed to display on screen. This can be prone to rate limits."
         type={FormNotice.Types.DANGER}
         style={{ marginBottom: 20 }}
       />
-      <SwitchItem {...util.useSetting(cfg, "avoidrates", true)}>Avoid Ratelimits</SwitchItem>
+      <SwitchItem {...util.useSetting(cfg, "avoidrates", true)}>Avoid rate limits</SwitchItem>
       <Category title="Display Badges" open={true}>
         <SwitchItem {...util.useSetting(cfg, "legacyUsername", true)}>
-          Display Legacy Username Badges
+          Display Legacy Username badges
         </SwitchItem>
-        <SwitchItem {...util.useSetting(cfg, "staff", true)}>Display Staff Badges</SwitchItem>
-        <SwitchItem {...util.useSetting(cfg, "partner", true)}>Display Partner Badges</SwitchItem>
+        <SwitchItem {...util.useSetting(cfg, "staff", true)}>Display Staff badges</SwitchItem>
+        <SwitchItem {...util.useSetting(cfg, "partner", true)}>Display Partner badges</SwitchItem>
         <SwitchItem {...util.useSetting(cfg, "moderator", true)}>
-          Display Moderator Badges
+          Display Moderator badges
         </SwitchItem>
         <SwitchItem {...util.useSetting(cfg, "hypesquad", true)}>
-          Display Hypesquad Badges
+          Display HypeSquad badges
         </SwitchItem>
         <SwitchItem {...util.useSetting(cfg, "bughunter", true)}>
-          Display Bughunter Badges
+          Display Bug Hunter badges
         </SwitchItem>
         <SwitchItem {...util.useSetting(cfg, "developer", true)}>
-          Display Developer Badges
+          Display Developer badges
         </SwitchItem>
         <SwitchItem {...util.useSetting(cfg, "earlySupporter", true)}>
-          Display Early Supporter Badges
+          Display Early Supporter badges
         </SwitchItem>
         <SwitchItem
           {...util.useSetting(cfg, "premium", true)}
-          note="Both guild boosting and nitro subscription">
-          Display Premium Badges
+          note="Both server boosting and Nitro subscription.">
+          Display Premium badges
         </SwitchItem>
-        <SwitchItem {...util.useSetting(cfg, "bot", true)} note="Includes slash command badge">
-          Display Bot Badges
+        <SwitchItem {...util.useSetting(cfg, "bot", true)} note="Includes slash command badge.">
+          Display Bot badges
         </SwitchItem>
+        <SwitchItem {...util.useSetting(cfg, "quest", true)}>Display Quest badges</SwitchItem>
       </Category>
     </>
   );

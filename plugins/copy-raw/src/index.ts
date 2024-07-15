@@ -1,10 +1,9 @@
-import { Injector, Logger, common, settings, webpack } from "replugged";
+import { Injector, common, settings, webpack } from "replugged";
 import { Channel, Message } from "discord-types/general";
 
 import { Icon } from "./CopyIcon";
 import createModal from "./Modal";
 
-const _ = Logger.plugin("Copy Raw");
 const injector = new Injector();
 
 export interface SettingsType {
@@ -20,11 +19,10 @@ export async function start(): Promise<void> {
     ),
   );
 
-  const Clipboard: {
-    SUPPORTED: boolean;
-    copy: (content: string) => unknown;
-  } = {
-    copy: Object.values(mod).find((e) => typeof e === "function") as (args: string) => void,
+  const Clipboard = {
+    copy: Object.values(mod).find((e) => typeof e === "function") as (
+      content: string,
+    ) => boolean | void,
     SUPPORTED: Object.values(mod).find((e) => typeof e === "boolean") as boolean,
   };
 

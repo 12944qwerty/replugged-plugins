@@ -1,47 +1,40 @@
-import { Injector, Logger, common, webpack } from "replugged";
-import { Message } from "discord-types/general";
-const { waitForModule, filters } = webpack;
+import type { Message } from "discord-types/general";
+import { Injector, Logger, common } from "replugged";
+import { filters, getFunctionBySource, waitForModule } from "replugged/webpack";
+
 const {
   users: { getCurrentUser },
   messages,
 } = common;
 
 const injector = new Injector();
-const logger = new Logger("Plugin", "EditUtils");
+const logger = Logger.plugin("EditUtils");
+
+interface MessageContentProps {
+  className?: string;
+  message: Message;
+  content: React.ReactElement[];
+  onUpdate?: () => void;
+  contentRef?: React.Ref<HTMLDivElement>;
+}
+
+type MessageContent = React.MemoExoticComponent<
+  (props: React.PropsWithChildren<MessageContentProps>) => React.ReactElement
+>;
 
 export async function start(): Promise<void> {
-  const mod = await waitForModule<Record<string, unknown>>(
-    filters.bySource(/:.\.editedTimestamp,/),
+  const MessageContent = await waitForModule(filters.bySource(/:.\.editedTimestamp,/)).then((mod) =>
+    getFunctionBySource<MessageContent>(mod, "Messages.MESSAGE_EDITED"),
   );
-  let key;
-  for (const k of Object.keys(mod)) {
-    if (typeof mod[k] === "object") {
-      key = k;
-    }
-  }
-  if (!key) {
+
+  if (!MessageContent) {
     logger.error("Couldn't find the correct module to inject into.");
     return;
   }
 
-  interface MessageContent {
-    // shuddup ts
-    type: (
-      ...args: Array<{
-        content: string[];
-        message: Message;
-      }>
-    ) => {
-      props: {
-        onClick: (e: React.MouseEvent) => unknown;
-      };
-    };
-  }
-
-  // console.log(mod, key);
-  injector.after(mod[key] as MessageContent, "type", ([{ message }], res) => {
+  injector.after(MessageContent, "type", ([{ message }], res) => {
     if (message.author.id === getCurrentUser().id) {
-      res.props.onClick = (e) => {
+      res.props.onClick = (e: React.MouseEvent<HTMLDivElement>) => {
         if (e.detail > 1) {
           messages.startEditMessage(message.channel_id, message.id, message.content);
         }

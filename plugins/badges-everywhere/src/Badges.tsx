@@ -1,14 +1,15 @@
-import { components, webpack } from "replugged";
 import { User } from "discord-types/general";
-import { SettingsType, badge, cfg, profile } from ".";
+import type React from "react";
+import { components, webpack } from "replugged";
+import { Badge, SettingsType, UserProfile, cfg } from ".";
 
-// @ts-expect-error shut up
-const { profileBadge24 } = await webpack.waitForProps("profileBadge24")!;
-// @ts-expect-error shut up
-const { anchor, anchorUnderlineOnHover } = await webpack.waitForProps(
-  "anchor",
-  "anchorUnderlineOnHover",
-)!;
+const { Tooltip } = components;
+
+const { profileBadge24 } =
+  await webpack.waitForProps<Record<"profileBadge24", string>>("profileBadge24");
+const { anchor, anchorUnderlineOnHover } = await webpack.waitForProps<
+  Record<"anchor" | "anchorUnderlineOnHover", string>
+>("anchor", "anchorUnderlineOnHover");
 
 const BadgeSettingMapping: Record<string, keyof SettingsType> = {
   legacy_username: "legacyUsername",
@@ -23,12 +24,13 @@ const BadgeSettingMapping: Record<string, keyof SettingsType> = {
   premium: "premium",
   guild_booster_lvl: "premium",
   bot_commands: "bot",
+  quest_completed: "quest",
 };
 
-export function badge(badge: badge): JSX.Element {
+export function Badge(badge: Badge): React.ReactElement {
   if (badge.link) {
     return (
-      <components.Tooltip text={badge.description}>
+      <Tooltip text={badge.description}>
         <a
           rel="noreferrer noopener"
           target="_blank"
@@ -37,15 +39,15 @@ export function badge(badge: badge): JSX.Element {
           className={`${anchor} ${anchorUnderlineOnHover}`}>
           <img alt="" src={badge.src} className={profileBadge24} />
         </a>
-      </components.Tooltip>
+      </Tooltip>
     );
   } else {
     return (
-      <components.Tooltip text={badge.description}>
+      <Tooltip text={badge.description}>
         <span role="button" tabIndex={0}>
           <img alt="" src={badge.src} className={profileBadge24} />
         </span>
-      </components.Tooltip>
+      </Tooltip>
     );
   }
 }
@@ -53,10 +55,10 @@ export function badge(badge: badge): JSX.Element {
 export const cache: Record<string, User> = {};
 
 export default function Badges(getImageUrl: (id: string) => string) {
-  return (props: { user?: profile }): JSX.Element | null => {
+  return (props: { user?: UserProfile }): React.ReactElement | null => {
     let { user } = props;
 
-    if (user && user.badges) {
+    if (user?.badges) {
       let badges = user.badges
         .map((badge) => {
           badge.src = getImageUrl(badge.icon);
@@ -71,9 +73,9 @@ export default function Badges(getImageUrl: (id: string) => string) {
 
           return badge;
         })
-        .filter(Boolean) as badge[];
+        .filter(Boolean) as Badge[];
 
-      return <div className="badges-everywhere">{badges.map(badge)}</div>;
+      return <div className="badges-everywhere">{badges.map(Badge)}</div>;
     } else {
       return null;
     }

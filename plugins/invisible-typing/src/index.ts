@@ -1,12 +1,12 @@
 import { Injector, common, settings, webpack } from "replugged";
 import "./style.css";
 
+import { Icon } from "./Icon";
+export { Settings } from "./Settings";
+
 const inject = new Injector();
 
-export { Settings } from "./Settings";
-import { Icon } from "./Icon";
-
-const { React } = common;
+const { React, typing } = common;
 
 export interface SettingsType {
   button?: boolean;
@@ -17,29 +17,21 @@ export interface SettingsType {
 export const cfg = await settings.init<SettingsType>("dev.kingfish.InvisibleTyping");
 
 export async function start(): Promise<void> {
-  const typingMod = await webpack.waitForModule<{
-    startTyping: (channelId: string) => unknown;
-  }>(webpack.filters.byProps("startTyping"));
+  inject.instead(typing, "startTyping", ([channelId], original) => {
+    const globalInvisible = cfg.get("invisible", true);
+    const channelWise = cfg.get("button", true) ? cfg.get("channelWise", true) : false;
+    const channels = cfg.get("channels", { [channelId]: globalInvisible });
+    if (channelWise ? (channels[channelId] ?? globalInvisible) : globalInvisible) {
+      return null;
+    } else {
+      original(channelId);
+    }
+  });
 
-  inject.instead(
-    typingMod,
-    "startTyping",
-    ([channelId]: [string], original: (channelId: string) => unknown) => {
-      const globalInvisible = cfg.get("invisible", true);
-      const channelWise = cfg.get("button", true) ? cfg.get("channelWise", true) : false;
-      const channels = cfg.get("channels", { [channelId]: globalInvisible });
-      if (channelWise ? channels[channelId] ?? globalInvisible : globalInvisible) {
-        return null;
-      } else {
-        return original(channelId);
-      }
-    },
-  );
-
-  const mod = await webpack.waitForModule<{
+  const ChannelTextAreaButtons = await webpack.waitForModule<{
     type: (args: { type: { analyticsName: string } }) => React.ReactElement | null;
-  }>(webpack.filters.bySource("ChannelTextAreaButtons"));
-  inject.after(mod, "type", ([args], res) => {
+  }>(webpack.filters.bySource(/{disabled:\w+,type:\w+},"emoji"/));
+  inject.after(ChannelTextAreaButtons, "type", ([args], res) => {
     if (res) {
       res.props.children.splice(1, 0, React.createElement(Icon, { type: args.type }));
     }

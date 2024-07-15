@@ -57,39 +57,42 @@ async function getCode(code: string): Promise<string | undefined> {
 
 export async function start(): Promise<void> {
   const mod = await webpack.waitForModule<Record<string, (args: string) => CodedLinks>>(
-    webpack.filters.bySource(".URL_REGEX)"),
+    webpack.filters.bySource("inviteHostRemainingPath"),
   );
   const key = webpack.getFunctionKeyBySource(mod, ".URL_REGEX)");
 
-  if (key) {
-    inject.after(mod, key, ([args], res) => {
-      if (args) {
-        const matches = [...new Set([...args.matchAll(DSC_REGEX)].map((match) => match[1]))];
-        for (const code of matches) {
-          getCode(code)
-            .then((code) => {
-              if (code) {
-                res.push({
-                  code,
-                  type: "INVITE",
-                  from: "dsc.gg",
-                });
-              }
-            })
-            .catch((err) => {
-              logger.error(`Couldn't fetch ${code} from dsc.gg. Error: ${err}`);
-            });
-        }
-      }
-
-      res = res.filter(
-        (val, index, self) =>
-          index === self.findIndex((t) => t.code === val.code && t.type === val.type),
-      );
-
-      return res;
-    });
+  if (!key) {
+    logger.error("Couldn't find the correct module to inject into.");
+    return;
   }
+
+  inject.after(mod, key, ([args], res) => {
+    if (args) {
+      const matches = [...new Set([...args.matchAll(DSC_REGEX)].map((match) => match[1]))];
+      for (const code of matches) {
+        getCode(code)
+          .then((code) => {
+            if (code) {
+              res.push({
+                code,
+                type: "INVITE",
+                from: "dsc.gg",
+              });
+            }
+          })
+          .catch((err) => {
+            logger.error(`Couldn't fetch ${code} from dsc.gg. Error: ${err}`);
+          });
+      }
+    }
+
+    res = res.filter(
+      (val, index, self) =>
+        index === self.findIndex((t) => t.code === val.code && t.type === val.type),
+    );
+
+    return res;
+  });
 }
 
 export function stop(): void {

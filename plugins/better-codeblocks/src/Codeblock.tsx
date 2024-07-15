@@ -7,26 +7,15 @@ const {
 } = common;
 import langs from "./langs.json";
 
-export interface Highlighter {
-  highlight: (
-    lang: string,
-    code: string,
-  ) => {
-    value: string;
-  };
-}
-const { highlight } = hljs as Highlighter;
-
 const mod = await webpack.waitForModule<Record<string, unknown>>(
   webpack.filters.bySource(
     'document.queryCommandEnabled("copy")||document.queryCommandSupported("copy")',
   ),
 );
-const Clipboard: {
-  SUPPORTED: boolean;
-  copy: (content: string) => unknown;
-} = {
-  copy: Object.values(mod).find((e) => typeof e === "function") as (args: string) => void,
+const Clipboard = {
+  copy: Object.values(mod).find((e) => typeof e === "function") as (
+    content: string,
+  ) => boolean | void,
   SUPPORTED: Object.values(mod).find((e) => typeof e === "boolean") as boolean,
 };
 
@@ -34,16 +23,16 @@ function resolveLang(id: string) {
   return langs.find((lang) => [...(lang.aliases || []), lang.id].includes(id));
 }
 
-export default function (props: { lang: string; code: string }): JSX.Element {
+export default function (props: { lang: string; code: string }): React.ReactElement {
   const { lang, code } = props;
 
   let lines;
   let langName = resolveLang(lang);
   if (langName) {
-    const res = highlight(lang.toLowerCase(), code);
+    const res = hljs.highlight(code, { language: lang.toLowerCase() });
     lines = res.value
       .split("\n")
-      .map((line) => <span dangerouslySetInnerHTML={{ __html: line }}></span>);
+      .map((line) => <span dangerouslySetInnerHTML={{ __html: line }} />);
   } else {
     lines = code.split("\n").map((line) => <span>{line}</span>);
   }

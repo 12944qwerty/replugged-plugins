@@ -1,5 +1,6 @@
+import type { Message } from "discord-types/general";
 import { common, components } from "replugged";
-import { Message } from "discord-types/general";
+
 const {
   Modal: { ModalRoot, ModalHeader, ModalContent, ModalFooter, ModalCloseButton },
   Button,
@@ -37,13 +38,25 @@ function cleanMessage(msg: Message) {
 
 interface ClipboardType {
   SUPPORTED: boolean;
-  copy: (content: string) => unknown;
+  copy: (content: string) => boolean | void;
 }
 
 export default function (msg: Message, Clipboard: ClipboardType, classes: Record<string, string>) {
   msg = cleanMessage(msg);
   const msgJson = JSON.stringify(msg, null, 4);
   let modalKey: string;
+
+  function handleCopy(content: string) {
+    if (Clipboard.SUPPORTED) {
+      Clipboard.copy(content);
+      common.toast.toast("Copied to clipboard!", common.toast.Kind.SUCCESS);
+    } else {
+      common.toast.toast(
+        "Your browser does not support copying to clipboard",
+        common.toast.Kind.FAILURE,
+      );
+    }
+  }
 
   modalKey = modal.openModal((props) => (
     <ModalRoot {...props} size="large">
@@ -81,34 +94,12 @@ export default function (msg: Message, Clipboard: ClipboardType, classes: Record
       </ModalContent>
       <ModalFooter>
         <Button
-          onClick={() => {
-            if (Clipboard.SUPPORTED) {
-              Clipboard.copy(msgJson);
-              common.toast.toast("Copied to clipboard!", common.toast.Kind.SUCCESS);
-            } else {
-              common.toast.toast(
-                "Your browser does not support copying to clipboard",
-                common.toast.Kind.FAILURE,
-              );
-            }
-          }}
+          onClick={() => handleCopy(msgJson)}
           style={{ marginLeft: 16 }}
           color={Button.Colors.GREEN}>
           Copy Message JSON
         </Button>
-        <Button
-          onClick={() => {
-            if (Clipboard.SUPPORTED) {
-              Clipboard.copy(msg.content);
-              common.toast.toast("Copied to clipboard!", common.toast.Kind.SUCCESS);
-            } else {
-              common.toast.toast(
-                "Your browser does not support copying to clipboard",
-                common.toast.Kind.FAILURE,
-              );
-            }
-          }}
-          color={Button.Colors.GREEN}>
+        <Button onClick={() => handleCopy(msg.content)} color={Button.Colors.GREEN}>
           Copy Raw Content
         </Button>
       </ModalFooter>
