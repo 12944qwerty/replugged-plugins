@@ -8,7 +8,7 @@
   margin-top: -1px;
 }
 
-.repliedMessage_f9f2ca > .badges-everywhere {
+[class*="repliedMessage"] > .badges-everywhere {
   margin-left: -2px;
   margin-right: 4px;
 }
