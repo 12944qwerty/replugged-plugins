@@ -92,9 +92,7 @@ export async function start(): Promise<void> {
     }
 
     if (res.props.children) {
-      res.props.children.splice(
-        4,
-        0,
+      res.props.children.push(
         React.createElement(Badges, { user: UserProfileStore.getUserProfile(author.id) }),
       );
     }

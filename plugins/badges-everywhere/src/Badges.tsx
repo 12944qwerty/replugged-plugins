@@ -5,11 +5,15 @@ import { Badge, SettingsType, UserProfile, cfg } from ".";
 
 const { Tooltip } = components;
 
-const { profileBadge24 } =
-  await webpack.waitForProps<Record<"profileBadge24", string>>("profileBadge24");
+console.log("loading badges");
+
+const { badge: badgeClass } =
+  await webpack.waitForProps<Record<"badge" | "starContainer", string>>("badge", "starContainer");
+console.log(badgeClass);
 const { anchor, anchorUnderlineOnHover } = await webpack.waitForProps<
   Record<"anchor" | "anchorUnderlineOnHover", string>
 >("anchor", "anchorUnderlineOnHover");
+console.log(badgeClass, anchor, anchorUnderlineOnHover);
 
 const BadgeSettingMapping: Record<string, keyof SettingsType> = {
   legacy_username: "legacyUsername",
@@ -36,8 +40,9 @@ export function Badge(badge: Badge): React.ReactElement {
           target="_blank"
           role="button"
           href={badge.link}
+          tabIndex={0}
           className={`${anchor} ${anchorUnderlineOnHover}`}>
-          <img alt="" src={badge.src} className={profileBadge24} />
+          <img alt="" src={badge.src} className={badgeClass} />
         </a>
       </Tooltip>
     );
@@ -45,7 +50,7 @@ export function Badge(badge: Badge): React.ReactElement {
     return (
       <Tooltip text={badge.description}>
         <span role="button" tabIndex={0}>
-          <img alt="" src={badge.src} className={profileBadge24} />
+          <img alt="" src={badge.src} className={badgeClass} />
         </span>
       </Tooltip>
     );
