@@ -1,6 +1,6 @@
 import type { Message } from "discord-types/general";
 import { Injector, Logger, common } from "replugged";
-import { filters, getFunctionBySource, waitForModule } from "replugged/webpack";
+import { filters, waitForModule } from "replugged/webpack";
 
 const {
   users: { getCurrentUser },
@@ -23,9 +23,10 @@ type MessageContent = React.MemoExoticComponent<
 >;
 
 export async function start(): Promise<void> {
-  const MessageContent = await waitForModule(filters.bySource(/:.\.editedTimestamp,/)).then((mod) =>
-    getFunctionBySource<MessageContent>(mod, "Messages.MESSAGE_EDITED"),
-  );
+  const MessageContent: MessageContent | undefined = await waitForModule<Record<string, MessageContent>>(filters.bySource("Messages.MESSAGE_EDITED,")).then(mod => {
+    console.log(Object.values(mod).filter(x => x.type && typeof x.type === "function"))
+    return Object.values(mod).filter(x => x.type && typeof x.type === "function")[0];
+  });
 
   if (!MessageContent) {
     logger.error("Couldn't find the correct module to inject into.");
