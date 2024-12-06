@@ -39,14 +39,23 @@ export async function start(): Promise<void> {
 
   const PermissionStore = webpack.getByStoreName<PermissionStore>("PermissionStore")!;
 
-  const { uploadEmoji } = await webpack.waitForProps<{
-    uploadEmoji: (args: {
-      guildId: string;
-      image: string;
-      name: string;
-      roles?: string[];
-    }) => Promise<unknown>;
-  }>("uploadEmoji");
+  const uploadEmoji = await webpack
+    .waitForModule(webpack.filters.bySource(`type:"EMOJI_UPLOAD_START"`))
+    .then((mod) =>
+      webpack.getFunctionBySource<
+        (args: {
+          guildId: string;
+          image: string;
+          name: string;
+          roles?: string[];
+        }) => Promise<unknown>
+      >(mod, `EMOJI_UPLOAD_START`),
+    );
+
+  if (!uploadEmoji) {
+    logger.error("Couldn't find uploadEmoji");
+    return;
+  }
 
   injector.utils.addMenuItem(ContextMenuTypes.Message, (data) => {
     if (data.favoriteableType === "emoji" && data.favoriteableName === null) {
