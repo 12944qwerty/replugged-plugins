@@ -2,7 +2,7 @@
 import { common, webpack } from "replugged";
 const {
   React,
-  i18n: { Messages },
+  i18n: { intl, t },
   hljs,
 } = common;
 import langs from "./langs.json";
@@ -75,7 +75,7 @@ export default function (props: { lang: string; code: string }): React.ReactElem
                 color: "#FFF",
                 cursor: copyCooldown ? "default" : "",
               }}>
-              {copyCooldown ? Messages.ACCOUNT_USERNAME_COPY_SUCCESS_1 : Messages.COPY}
+              {copyCooldown ? intl.string(t.COPY_SUCCESS_1) : intl.string(t.COPY)}
             </button>
           </div>
         )}
