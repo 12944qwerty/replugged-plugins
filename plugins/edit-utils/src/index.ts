@@ -23,9 +23,10 @@ type MessageContent = React.MemoExoticComponent<
 >;
 
 export async function start(): Promise<void> {
-  const MessageContent: MessageContent | undefined = await waitForModule<Record<string, MessageContent>>(filters.bySource("Messages.MESSAGE_EDITED,")).then(mod => {
-    console.log(Object.values(mod).filter(x => x.type && typeof x.type === "function"))
-    return Object.values(mod).filter(x => x.type && typeof x.type === "function")[0];
+  const MessageContent: MessageContent | undefined = await waitForModule<
+    Record<string, MessageContent>
+  >(filters.bySource(/messageContent]:!0,\[\w+\.isSending/)).then((mod) => {
+    return Object.values(mod).filter((x) => typeof x.type === "function")[0];
   });
 
   if (!MessageContent) {
