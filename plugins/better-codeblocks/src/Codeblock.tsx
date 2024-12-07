@@ -71,7 +71,7 @@ export default function (props: { lang: string; code: string }): React.ReactElem
               className="better-codeblocks-btn"
               onClick={onCopyBtnClick}
               style={{
-                backgroundColor: "#7289da",
+                backgroundColor: copyCooldown ? "#36a84d" : "#7289da",
                 color: "#FFF",
                 cursor: copyCooldown ? "default" : "",
               }}>
