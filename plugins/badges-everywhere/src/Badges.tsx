@@ -5,15 +5,13 @@ import { Badge, SettingsType, UserProfile, cfg } from ".";
 
 const { Tooltip } = components;
 
-console.log("loading badges");
-
-const { badge: badgeClass } =
-  await webpack.waitForProps<Record<"badge" | "starContainer", string>>("badge", "starContainer");
-console.log(badgeClass);
+const { badge: badgeClass } = await webpack.waitForProps<Record<"badge" | "starContainer", string>>(
+  "badge",
+  "starContainer",
+);
 const { anchor, anchorUnderlineOnHover } = await webpack.waitForProps<
   Record<"anchor" | "anchorUnderlineOnHover", string>
 >("anchor", "anchorUnderlineOnHover");
-console.log(badgeClass, anchor, anchorUnderlineOnHover);
 
 const BadgeSettingMapping: Record<string, keyof SettingsType> = {
   legacy_username: "legacyUsername",
