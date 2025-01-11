@@ -1,10 +1,11 @@
-import { Injector, common, settings, webpack } from "replugged";
+import { Injector, Logger, common, settings, webpack } from "replugged";
 import "./style.css";
 
 import { Icon } from "./Icon";
 export { Settings } from "./Settings";
 
 const inject = new Injector();
+const logger = Logger.plugin("InvisibleTyping");
 
 const { React, typing } = common;
 
@@ -28,9 +29,18 @@ export async function start(): Promise<void> {
     }
   });
 
-  const ChannelTextAreaButtons = await webpack.waitForModule<{
+  const channelTextAreaButtonsMod = await webpack.waitForModule(
+    webpack.filters.bySource(/{disabled:\w+,type:\w+},"emoji"/),
+  );
+  const ChannelTextAreaButtons = webpack.getExportsForProps<{
     type: (args: { type: { analyticsName: string } }) => React.ReactElement | null;
-  }>(webpack.filters.bySource(/{disabled:\w+,type:\w+},"emoji"/));
+  }>(channelTextAreaButtonsMod, ["type"]);
+
+  if (!ChannelTextAreaButtons) {
+    logger.error("Couldn't find ChannelTextAreaButtons");
+    return;
+  }
+
   inject.after(ChannelTextAreaButtons, "type", ([args], res) => {
     if (res) {
       res.props.children.splice(1, 0, React.createElement(Icon, { type: args.type }));
