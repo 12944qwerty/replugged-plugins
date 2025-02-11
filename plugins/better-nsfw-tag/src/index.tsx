@@ -2,7 +2,12 @@ import type { Channel } from "discord-types/general";
 import type React from "react";
 import { Injector, Logger } from "replugged";
 import { Tree, findInReactTree } from "replugged/util";
-import { filters, getFunctionKeyBySource, waitForModule, waitForProps } from "replugged/webpack";
+import {
+  filters,
+  getFunctionBySource,
+  getFunctionKeyBySource,
+  waitForModule,
+} from "replugged/webpack";
 
 const inject = new Injector();
 const logger = Logger.plugin("BetterNSFWTag");
@@ -25,9 +30,13 @@ export async function start(): Promise<void> {
     return;
   }
 
-  const { TextBadge } = await waitForProps<{
-    TextBadge: React.FC<TextBadgeProps>;
-  }>("TextBadge");
+  const badgesMod = await waitForModule(filters.bySource(".textBadge,"));
+  const TextBadge = getFunctionBySource<React.FC<TextBadgeProps>>(badgesMod, "textBadge");
+
+  if (!TextBadge) {
+    logger.error("Couldn't find the TextBadge component.");
+    return;
+  }
 
   inject.after(mod, key, ([{ channel }], res) => {
     if (!channel.nsfw) return;
