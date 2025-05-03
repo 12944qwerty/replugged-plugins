@@ -1,17 +1,9 @@
 import { User } from "discord-types/general";
 import type React from "react";
 import { components, webpack } from "replugged";
-import { Badge, SettingsType, UserProfile, cfg } from ".";
+import { Badge, SettingsType, UserProfile, cfg, logger } from ".";
 
 const { Tooltip } = components;
-
-const { badge: badgeClass } = await webpack.waitForProps<Record<"badge" | "starContainer", string>>(
-  "badge",
-  "starContainer",
-);
-const { anchor, anchorUnderlineOnHover } = await webpack.waitForProps<
-  Record<"anchor" | "anchorUnderlineOnHover", string>
->("anchor", "anchorUnderlineOnHover");
 
 const BadgeSettingMapping: Record<string, keyof SettingsType> = {
   legacy_username: "legacyUsername",
@@ -29,7 +21,21 @@ const BadgeSettingMapping: Record<string, keyof SettingsType> = {
   quest_completed: "quest",
 };
 
-export function Badge(badge: Badge): React.ReactElement {
+export function Badge(badge: Badge): React.ReactElement | null {
+  const anchorClasses = webpack.getByProps<Record<"anchor" | "anchorUnderlineOnHover", string>>("anchor", "anchorUnderlineOnHover");
+  if (!anchorClasses) {
+    logger.error("Failed to get anchor classes");
+    return null;
+  }
+  const { badge: badgeClass } = webpack.getByProps<Record<"badge" | "container", string>>(
+    "badge",
+    "container",
+  ) || {};
+  if (!badgeClass) {
+    logger.error("Failed to get badge class");
+    return null;
+  }
+
   if (badge.link) {
     return (
       <Tooltip text={badge.description}>
@@ -39,7 +45,7 @@ export function Badge(badge: Badge): React.ReactElement {
           role="button"
           href={badge.link}
           tabIndex={0}
-          className={`${anchor} ${anchorUnderlineOnHover}`}>
+          className={`${anchorClasses.anchor} ${anchorClasses.anchorUnderlineOnHover}`}>
           <img alt="" src={badge.src} className={badgeClass} />
         </a>
       </Tooltip>

@@ -10,7 +10,7 @@ import badges from "./Badges";
 export { Settings } from "./Settings";
 
 const injector = new Injector();
-const logger = Logger.plugin("BadgesEverywhere");
+export const logger = Logger.plugin("BadgesEverywhere");
 
 export interface SettingsType {
   legacyUsername?: boolean;
@@ -26,7 +26,7 @@ export interface SettingsType {
   avoidrates?: boolean;
   quest?: boolean;
 }
-export const cfg = await settings.init<SettingsType>("dev.kingfish.BadgesEverywhere");
+export const cfg = settings.init<SettingsType>("dev.kingfish.BadgesEverywhere");
 
 export interface Badge extends APIBadge {
   src: string;
@@ -69,6 +69,7 @@ export async function start(): Promise<void> {
       }>
     ) => React.ReactElement;
   }>(webpack.filters.bySource('"BADGES"'));
+
   const key = webpack.getFunctionKeyBySource(mod, "decorations");
 
   if (!key) {
