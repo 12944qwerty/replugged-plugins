@@ -13,7 +13,7 @@ const injector = new Injector();
 export interface SettingsType {
   theme: string;
 }
-export const cfg = await settings.init<SettingsType>("dev.kingfish.BetterCodeblocks", {
+export const cfg = settings.init<SettingsType>("dev.kingfish.BetterCodeblocks", {
   theme: "vs2015",
 });
 

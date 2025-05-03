@@ -9,7 +9,7 @@ const { SelectItem, ErrorBoundary } = components;
 
 import previews from "./previews.json";
 
-const classes = await webpack.waitForProps<Record<string, string>>("select", "lookFilled");
+const classes = webpack.getByProps<Record<string, string>>("select", "lookFilled")!;
 
 function updateTheme(theme: string) {
   cfg.set("theme", theme);

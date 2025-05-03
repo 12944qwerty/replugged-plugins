@@ -7,14 +7,12 @@ const {
 } = common;
 import langs from "./langs.json";
 
-const mod = await webpack.waitForModule<Record<string, unknown>>(
-  webpack.filters.bySource(
-    'document.queryCommandEnabled("copy")||document.queryCommandSupported("copy")',
-  ),
-);
+const mod = webpack.getBySource<Record<string, unknown>>("Clipboard API")!;
 const Clipboard = {
   copy: Object.values(mod).find((e) => typeof e === "function") as (
     content: string,
+    onSuccess?: () => void,
+    onError?: (err: Error) => void,  
   ) => boolean | void,
   SUPPORTED: Object.values(mod).find((e) => typeof e === "boolean") as boolean,
 };
