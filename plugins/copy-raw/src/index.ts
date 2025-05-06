@@ -9,19 +9,18 @@ const injector = new Injector();
 export interface SettingsType {
   swap?: boolean;
 }
-export const cfg = await settings.init<SettingsType>("dev.kingfish.CopyRaw");
+export const cfg = settings.init<SettingsType>("dev.kingfish.CopyRaw");
 export { Settings } from "./Settings";
 
 export async function start(): Promise<void> {
   const mod = await webpack.waitForModule<Record<string, unknown>>(
-    webpack.filters.bySource(
-      'document.queryCommandEnabled("copy")||document.queryCommandSupported("copy")',
-    ),
+    webpack.filters.bySource("Clipboard API"),
   );
-
   const Clipboard = {
     copy: Object.values(mod).find((e) => typeof e === "function") as (
       content: string,
+      onSuccess?: () => void,
+      onError?: (err: Error) => void,  
     ) => boolean | void,
     SUPPORTED: Object.values(mod).find((e) => typeof e === "boolean") as boolean,
   };
